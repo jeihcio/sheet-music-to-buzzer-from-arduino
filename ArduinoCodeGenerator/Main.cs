@@ -44,6 +44,7 @@ namespace ArduinoCodeGenerator
         {
             var noteScale = controller.GetNoteInSheetMusic(cmbNote, numberScale);
             var figure = controller.GetImage(cmbFigure, noteScale);
+
             controller.DrawFigure(pnlPentagram, figure, noteScale);
         }
     }
