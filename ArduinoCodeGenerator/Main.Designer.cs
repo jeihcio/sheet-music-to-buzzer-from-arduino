@@ -35,9 +35,6 @@
             this.numScale = new System.Windows.Forms.NumericUpDown();
             this.cmbNote = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblBPM = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.numberBPM = new System.Windows.Forms.NumericUpDown();
@@ -46,17 +43,22 @@
             this.btnAddNote = new System.Windows.Forms.Button();
             this.btnAddPause = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbFigurePause = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnRemoveLastFigure = new System.Windows.Forms.Button();
             this.btnGenerateCodeArduino = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblBPM = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pnlPentagram = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numScale)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberBPM)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -64,7 +66,7 @@
             this.groupBox1.Controls.Add(this.btnRemoveLastFigure);
             this.groupBox1.Controls.Add(this.btnAddPause);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbFigurePause);
             this.groupBox1.Controls.Add(this.btnAddNote);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -156,43 +158,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.lblBPM);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 250);
             this.panel1.TabIndex = 3;
-            // 
-            // lblBPM
-            // 
-            this.lblBPM.AutoSize = true;
-            this.lblBPM.Location = new System.Drawing.Point(79, 51);
-            this.lblBPM.Name = "lblBPM";
-            this.lblBPM.Size = new System.Drawing.Size(19, 13);
-            this.lblBPM.TabIndex = 3;
-            this.lblBPM.Text = "60";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(52, 34);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 35);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.AutoScroll = true;
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.Location = new System.Drawing.Point(51, 69);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1044, 112);
-            this.panel2.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -277,12 +249,12 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Pause";
             // 
-            // comboBox1
+            // cmbFigurePause
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbFigurePause.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFigurePause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbFigurePause.FormattingEnabled = true;
+            this.cmbFigurePause.Items.AddRange(new object[] {
             "Semibreve",
             "Minimum",
             "Quarter Note",
@@ -290,10 +262,10 @@
             "Sixteenth Note",
             "Fusa",
             "Semifusa"});
-            this.comboBox1.Location = new System.Drawing.Point(303, 41);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(112, 21);
-            this.comboBox1.TabIndex = 4;
+            this.cmbFigurePause.Location = new System.Drawing.Point(303, 41);
+            this.cmbFigurePause.Name = "cmbFigurePause";
+            this.cmbFigurePause.Size = new System.Drawing.Size(112, 21);
+            this.cmbFigurePause.TabIndex = 4;
             // 
             // groupBox2
             // 
@@ -323,6 +295,46 @@
             this.btnGenerateCodeArduino.Text = "Generate code for Arduino";
             this.btnGenerateCodeArduino.UseVisualStyleBackColor = true;
             // 
+            // panel3
+            // 
+            this.panel3.AutoScroll = true;
+            this.panel3.Controls.Add(this.lblBPM);
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Controls.Add(this.pnlPentagram);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(52, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(748, 250);
+            this.panel3.TabIndex = 4;
+            // 
+            // lblBPM
+            // 
+            this.lblBPM.AutoSize = true;
+            this.lblBPM.Location = new System.Drawing.Point(27, 51);
+            this.lblBPM.Name = "lblBPM";
+            this.lblBPM.Size = new System.Drawing.Size(19, 13);
+            this.lblBPM.TabIndex = 6;
+            this.lblBPM.Text = "60";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 34);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(33, 35);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pnlPentagram
+            // 
+            this.pnlPentagram.AutoScroll = true;
+            this.pnlPentagram.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlPentagram.BackgroundImage")));
+            this.pnlPentagram.Location = new System.Drawing.Point(-1, 69);
+            this.pnlPentagram.Name = "pnlPentagram";
+            this.pnlPentagram.Size = new System.Drawing.Size(101, 112);
+            this.pnlPentagram.TabIndex = 4;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,15 +351,17 @@
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Generate code for Arduino";
+            this.Shown += new System.EventHandler(this.Main_Shown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numScale)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberBPM)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,24 +372,25 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numberBPM;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label lblBPM;
         private System.Windows.Forms.ComboBox cmbNote;
         private System.Windows.Forms.ComboBox cmbFigure;
         private System.Windows.Forms.NumericUpDown numScale;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAddPause;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbFigurePause;
         private System.Windows.Forms.Button btnAddNote;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnRemoveLastFigure;
         private System.Windows.Forms.Button btnGenerateCodeArduino;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label lblBPM;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel pnlPentagram;
     }
 }
 

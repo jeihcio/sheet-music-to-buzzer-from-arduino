@@ -26,5 +26,14 @@ namespace ArduinoCodeGenerator
         {
 
         }
+
+        private void Main_Shown(object sender, EventArgs e)
+        {
+            var firstItem = 0;
+
+            cmbNote.SelectedIndex = firstItem;
+            cmbFigure.SelectedIndex = firstItem;
+            cmbFigurePause.SelectedIndex = firstItem;
+        }
     }
 }
