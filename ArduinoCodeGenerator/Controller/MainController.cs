@@ -46,5 +46,10 @@ namespace ArduinoCodeGenerator.Controller
         {
             sheetMusicService.RemoveLastFigure(pnlPentagram);
         }
+
+        public void SaveImageAs(Panel pnlPentagram)
+        {
+            sheetMusicService.SaveImageAs(pnlPentagram);
+        }
     }
 }

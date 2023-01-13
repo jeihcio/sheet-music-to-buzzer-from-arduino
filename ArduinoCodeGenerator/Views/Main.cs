@@ -52,5 +52,10 @@ namespace ArduinoCodeGenerator
         {
             controller.RemoveLastFigure(pnlPentagram);
         }
+
+        private void saveImageAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            controller.SaveImageAs(pnlMain);
+        }
     }
 }

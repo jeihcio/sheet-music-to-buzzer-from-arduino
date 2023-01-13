@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnRemoveLastFigure = new System.Windows.Forms.Button();
@@ -41,24 +42,28 @@
             this.cmbFigure = new System.Windows.Forms.ComboBox();
             this.numberScale = new System.Windows.Forms.NumericUpDown();
             this.cmbNote = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlMain = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblBPM = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlPentagram = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.numberBPM = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnGenerateCodeArduino = new System.Windows.Forms.Button();
+            this.MenuPentagram = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.saveImageAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblBPM = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberScale)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.pnlMain.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pnlPentagram.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberBPM)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.MenuPentagram.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -229,23 +234,22 @@
             this.cmbNote.Size = new System.Drawing.Size(68, 21);
             this.cmbNote.TabIndex = 0;
             // 
-            // panel1
+            // pnlMain
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 250);
-            this.panel1.TabIndex = 3;
+            this.pnlMain.BackColor = System.Drawing.Color.White;
+            this.pnlMain.Controls.Add(this.panel3);
+            this.pnlMain.Controls.Add(this.pictureBox1);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlMain.Location = new System.Drawing.Point(0, 0);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(800, 250);
+            this.pnlMain.TabIndex = 3;
             // 
             // panel3
             // 
             this.panel3.AutoScroll = true;
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.Controls.Add(this.lblBPM);
-            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.ContextMenuStrip = this.MenuPentagram;
             this.panel3.Controls.Add(this.pnlPentagram);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(52, 0);
@@ -253,37 +257,22 @@
             this.panel3.Size = new System.Drawing.Size(748, 250);
             this.panel3.TabIndex = 4;
             // 
-            // lblBPM
-            // 
-            this.lblBPM.AutoSize = true;
-            this.lblBPM.Location = new System.Drawing.Point(27, 51);
-            this.lblBPM.Name = "lblBPM";
-            this.lblBPM.Size = new System.Drawing.Size(19, 13);
-            this.lblBPM.TabIndex = 6;
-            this.lblBPM.Text = "60";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 34);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 35);
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
             // pnlPentagram
             // 
             this.pnlPentagram.AutoScroll = true;
             this.pnlPentagram.BackColor = System.Drawing.Color.Transparent;
+            this.pnlPentagram.ContextMenuStrip = this.MenuPentagram;
+            this.pnlPentagram.Controls.Add(this.lblBPM);
+            this.pnlPentagram.Controls.Add(this.pictureBox2);
             this.pnlPentagram.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlPentagram.Location = new System.Drawing.Point(0, 0);
             this.pnlPentagram.Name = "pnlPentagram";
-            this.pnlPentagram.Size = new System.Drawing.Size(50, 250);
+            this.pnlPentagram.Size = new System.Drawing.Size(55, 250);
             this.pnlPentagram.TabIndex = 4;
             // 
             // pictureBox1
             // 
+            this.pictureBox1.ContextMenuStrip = this.MenuPentagram;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
@@ -339,6 +328,41 @@
             this.btnGenerateCodeArduino.Text = "Generate code for Arduino";
             this.btnGenerateCodeArduino.UseVisualStyleBackColor = true;
             // 
+            // MenuPentagram
+            // 
+            this.MenuPentagram.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveImageAsToolStripMenuItem});
+            this.MenuPentagram.Name = "MenuPentagram";
+            this.MenuPentagram.Size = new System.Drawing.Size(163, 26);
+            // 
+            // saveImageAsToolStripMenuItem
+            // 
+            this.saveImageAsToolStripMenuItem.Name = "saveImageAsToolStripMenuItem";
+            this.saveImageAsToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.saveImageAsToolStripMenuItem.Text = "Save Image As....";
+            this.saveImageAsToolStripMenuItem.Click += new System.EventHandler(this.saveImageAsToolStripMenuItem_Click);
+            // 
+            // lblBPM
+            // 
+            this.lblBPM.AutoSize = true;
+            this.lblBPM.ContextMenuStrip = this.MenuPentagram;
+            this.lblBPM.Location = new System.Drawing.Point(29, 42);
+            this.lblBPM.Name = "lblBPM";
+            this.lblBPM.Size = new System.Drawing.Size(25, 13);
+            this.lblBPM.TabIndex = 8;
+            this.lblBPM.Text = "144";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.ContextMenuStrip = this.MenuPentagram;
+            this.pictureBox2.Location = new System.Drawing.Point(-2, 24);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(33, 35);
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,7 +371,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.numberBPM);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -359,13 +383,15 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberScale)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.pnlMain.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.pnlPentagram.ResumeLayout(false);
+            this.pnlPentagram.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberBPM)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            this.MenuPentagram.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,7 +400,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numberBPM;
@@ -392,9 +418,11 @@
         private System.Windows.Forms.Button btnRemoveLastFigure;
         private System.Windows.Forms.Button btnGenerateCodeArduino;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlPentagram;
+        private System.Windows.Forms.ContextMenuStrip MenuPentagram;
+        private System.Windows.Forms.ToolStripMenuItem saveImageAsToolStripMenuItem;
         private System.Windows.Forms.Label lblBPM;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel pnlPentagram;
     }
 }
 

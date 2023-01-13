@@ -4,6 +4,7 @@ using ArduinoCodeGenerator.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,36 @@ namespace ArduinoCodeGenerator.Service
             var top = topScale;
 
             return topScale;
+        }
+
+        private string OpenDialog()
+        {
+            SaveFileDialog saveFile = new SaveFileDialog
+            {
+                Filter = "JPEG Image (.jpeg)|*.jpeg"
+            };
+            saveFile.ShowDialog();
+
+            return saveFile.FileName;
+        }
+
+        private bool SaveImageAs(string path, Panel pnlPentagram)
+        {
+            try
+            {
+                int width = pnlPentagram.Size.Width;
+                int height = pnlPentagram.Size.Height;
+
+                Bitmap bitMap = new Bitmap(width, height);
+                pnlPentagram.DrawToBitmap(bitMap, new Rectangle(0, 0, width, height));
+
+                bitMap.Save(path, ImageFormat.Jpeg);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public Image GetImage(FigureEnum figure, NoteInSheetMusic note)
@@ -84,6 +115,15 @@ namespace ArduinoCodeGenerator.Service
             pnlPentagram.Controls.Remove(lastFigure);
 
             pnlPentagram.AutoScroll = true;
+        }
+
+        public void SaveImageAs(Panel pnlPentagram)
+        {
+            var path = OpenDialog();
+            if (String.IsNullOrEmpty(path)) return;
+
+            if (SaveImageAs(path, pnlPentagram))
+                MessageBox.Show("Saved successfully!", "Save Image As...");
         }
     }
 }
