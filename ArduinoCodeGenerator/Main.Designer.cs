@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,6 +52,7 @@
             this.lblBPM = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlPentagram = new System.Windows.Forms.Panel();
+            this.imageListFigure = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numScale)).BeginInit();
             this.panel1.SuspendLayout();
@@ -105,9 +107,9 @@
             "Sixteenth Note",
             "Fusa",
             "Semifusa"});
-            this.cmbFigure.Location = new System.Drawing.Point(153, 42);
+            this.cmbFigure.Location = new System.Drawing.Point(153, 41);
             this.cmbFigure.Name = "cmbFigure";
-            this.cmbFigure.Size = new System.Drawing.Size(112, 21);
+            this.cmbFigure.Size = new System.Drawing.Size(159, 21);
             this.cmbFigure.TabIndex = 2;
             // 
             // numScale
@@ -224,7 +226,7 @@
             // 
             // btnAddNote
             // 
-            this.btnAddNote.Location = new System.Drawing.Point(270, 40);
+            this.btnAddNote.Location = new System.Drawing.Point(314, 39);
             this.btnAddNote.Name = "btnAddNote";
             this.btnAddNote.Size = new System.Drawing.Size(27, 23);
             this.btnAddNote.TabIndex = 3;
@@ -233,7 +235,7 @@
             // 
             // btnAddPause
             // 
-            this.btnAddPause.Location = new System.Drawing.Point(420, 39);
+            this.btnAddPause.Location = new System.Drawing.Point(486, 39);
             this.btnAddPause.Name = "btnAddPause";
             this.btnAddPause.Size = new System.Drawing.Size(27, 23);
             this.btnAddPause.TabIndex = 5;
@@ -262,9 +264,9 @@
             "Sixteenth Note",
             "Fusa",
             "Semifusa"});
-            this.cmbFigurePause.Location = new System.Drawing.Point(303, 41);
+            this.cmbFigurePause.Location = new System.Drawing.Point(344, 41);
             this.cmbFigurePause.Name = "cmbFigurePause";
-            this.cmbFigurePause.Size = new System.Drawing.Size(112, 21);
+            this.cmbFigurePause.Size = new System.Drawing.Size(140, 21);
             this.cmbFigurePause.TabIndex = 4;
             // 
             // groupBox2
@@ -279,9 +281,9 @@
             // 
             // btnRemoveLastFigure
             // 
-            this.btnRemoveLastFigure.Location = new System.Drawing.Point(453, 39);
+            this.btnRemoveLastFigure.Location = new System.Drawing.Point(515, 39);
             this.btnRemoveLastFigure.Name = "btnRemoveLastFigure";
-            this.btnRemoveLastFigure.Size = new System.Drawing.Size(172, 23);
+            this.btnRemoveLastFigure.Size = new System.Drawing.Size(110, 23);
             this.btnRemoveLastFigure.TabIndex = 6;
             this.btnRemoveLastFigure.Text = "Remove last picture";
             this.btnRemoveLastFigure.UseVisualStyleBackColor = true;
@@ -334,6 +336,12 @@
             this.pnlPentagram.Name = "pnlPentagram";
             this.pnlPentagram.Size = new System.Drawing.Size(101, 112);
             this.pnlPentagram.TabIndex = 4;
+            // 
+            // imageListFigure
+            // 
+            this.imageListFigure.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageListFigure.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageListFigure.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // Main
             // 
@@ -391,6 +399,7 @@
         private System.Windows.Forms.Label lblBPM;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel pnlPentagram;
+        private System.Windows.Forms.ImageList imageListFigure;
     }
 }
 
