@@ -16,5 +16,10 @@ namespace ArduinoCodeGenerator
         {
             InitializeComponent();
         }
+
+        private void numberBPM_ValueChanged(object sender, EventArgs e)
+        {
+            lblBPM.Text = numberBPM.Value.ToString();
+        }
     }
 }
