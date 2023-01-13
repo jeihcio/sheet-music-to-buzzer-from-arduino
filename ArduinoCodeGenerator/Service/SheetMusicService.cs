@@ -13,9 +13,12 @@ namespace ArduinoCodeGenerator.Service
 {
     class SheetMusicService
     {
-        private int GetTopNote(NoteEnum note, NumericUpDown scale)
+        private int GetTopNote(NoteEnum note, int scale)
         {
-            return 33;
+            var topScale = 30 * scale;
+            var top = topScale ;
+
+            return topScale;
         }
 
         public Image GetImage(FigureEnum figure, NoteInSheetMusic note)
@@ -41,7 +44,7 @@ namespace ArduinoCodeGenerator.Service
             {
                 Note = note,
                 Scale = (int)scale.Value,
-                Top = GetTopNote(note, scale)
+                Top = GetTopNote(note, (int)scale.Value)
             };
 
             return result;
@@ -57,6 +60,7 @@ namespace ArduinoCodeGenerator.Service
                 Width = figure.Width,
                 Height = figure.Height,
                 BackgroundImage = figure,
+                BackColor = Color.Transparent,
                 Top = note.Top
             };
 
