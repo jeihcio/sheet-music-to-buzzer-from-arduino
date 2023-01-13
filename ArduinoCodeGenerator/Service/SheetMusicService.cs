@@ -14,14 +14,40 @@ namespace ArduinoCodeGenerator.Service
 {
     class SheetMusicService
     {
-        private readonly int offset = 10;
+        private readonly int offset = 20;
 
         private int GetTopNote(NoteEnum note, int scale)
-        {
-            var topScale = 30 * scale;
-            var top = topScale;
+        {            
+            int[] topDoScale = {
+                50, // do2
+                0,  // do3
+                -48, // do4
+                -100, // do5
+            };
 
-            return topScale;
+            int[] topNotes =
+            {
+                0, // do
+                0, // do #
+                1, // ré
+                1, // ré #,
+                2, // mi
+                3, // fá
+                3, // fá #
+                4, // sol
+                4, // sol #
+                5, // lá
+                5, // lá #
+                6  // si
+            };
+           
+            var startPentagram = 158;
+            var topScale = startPentagram + topDoScale[scale - 2];
+
+            int topNote = -6 * topNotes[(int)note];
+            var top = topScale + topNote;
+
+            return top;
         }
 
         private string OpenDialog()
