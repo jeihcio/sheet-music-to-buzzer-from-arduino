@@ -94,7 +94,7 @@
             // 
             // btnAddPause
             // 
-            this.btnAddPause.Location = new System.Drawing.Point(486, 39);
+            this.btnAddPause.Location = new System.Drawing.Point(485, 39);
             this.btnAddPause.Name = "btnAddPause";
             this.btnAddPause.Size = new System.Drawing.Size(27, 23);
             this.btnAddPause.TabIndex = 5;
@@ -104,7 +104,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(347, 22);
+            this.label5.Location = new System.Drawing.Point(319, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 8;
@@ -123,14 +123,14 @@
             "Sixteenth Note",
             "Fusa",
             "Semifusa"});
-            this.cmbFigurePause.Location = new System.Drawing.Point(344, 41);
+            this.cmbFigurePause.Location = new System.Drawing.Point(323, 41);
             this.cmbFigurePause.Name = "cmbFigurePause";
-            this.cmbFigurePause.Size = new System.Drawing.Size(140, 21);
+            this.cmbFigurePause.Size = new System.Drawing.Size(160, 21);
             this.cmbFigurePause.TabIndex = 4;
             // 
             // btnAddNote
             // 
-            this.btnAddNote.Location = new System.Drawing.Point(314, 39);
+            this.btnAddNote.Location = new System.Drawing.Point(293, 39);
             this.btnAddNote.Name = "btnAddNote";
             this.btnAddNote.Size = new System.Drawing.Size(27, 23);
             this.btnAddNote.TabIndex = 3;
@@ -141,7 +141,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(156, 23);
+            this.label4.Location = new System.Drawing.Point(128, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 5;
@@ -150,7 +150,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(101, 23);
+            this.label3.Location = new System.Drawing.Point(82, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 4;
@@ -178,14 +178,14 @@
             "Sixteenth Note",
             "Fusa",
             "Semifusa"});
-            this.cmbFigure.Location = new System.Drawing.Point(153, 41);
+            this.cmbFigure.Location = new System.Drawing.Point(131, 41);
             this.cmbFigure.Name = "cmbFigure";
-            this.cmbFigure.Size = new System.Drawing.Size(159, 21);
+            this.cmbFigure.Size = new System.Drawing.Size(160, 21);
             this.cmbFigure.TabIndex = 2;
             // 
             // numberScale
             // 
-            this.numberScale.Location = new System.Drawing.Point(99, 42);
+            this.numberScale.Location = new System.Drawing.Point(79, 42);
             this.numberScale.Maximum = new decimal(new int[] {
             5,
             0,
@@ -211,21 +211,21 @@
             this.cmbNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbNote.FormattingEnabled = true;
             this.cmbNote.Items.AddRange(new object[] {
-            "C - Dó",
-            "C# - Dó#",
-            "D - Ré",
-            "D# - Ré#",
-            "E - Mi",
-            "F - Fá",
-            "F# - Fá#",
-            "G - Sol",
-            "G# - Sol #",
-            "A - Lá",
-            "A# - Lá #",
-            "B - Si"});
+            "Dó",
+            "Dó#",
+            "Ré",
+            "Ré#",
+            "Mi",
+            "Fá",
+            "Fá#",
+            "Sol",
+            "Sol #",
+            "Lá",
+            "Lá #",
+            "Si"});
             this.cmbNote.Location = new System.Drawing.Point(7, 41);
             this.cmbNote.Name = "cmbNote";
-            this.cmbNote.Size = new System.Drawing.Size(86, 21);
+            this.cmbNote.Size = new System.Drawing.Size(68, 21);
             this.cmbNote.TabIndex = 0;
             // 
             // panel1
