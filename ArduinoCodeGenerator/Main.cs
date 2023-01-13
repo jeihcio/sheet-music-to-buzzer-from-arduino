@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArduinoCodeGenerator.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace ArduinoCodeGenerator
 {
     public partial class Main : Form
     {
+        private readonly MainController controller;
+
         public Main()
         {
             InitializeComponent();
+            controller = new MainController();
         }
 
         private void numberBPM_ValueChanged(object sender, EventArgs e)
@@ -34,6 +38,13 @@ namespace ArduinoCodeGenerator
             cmbNote.SelectedIndex = firstItem;
             cmbFigure.SelectedIndex = firstItem;
             cmbFigurePause.SelectedIndex = firstItem;
+        }
+
+        private void btnAddNote_Click(object sender, EventArgs e)
+        {
+            var noteScale = controller.GetNoteInSheetMusic(cmbNote, numberScale);
+            var figure = controller.GetImage(cmbFigure, noteScale);
+            controller.DrawFigure(pnlPentagram, figure, noteScale);
         }
     }
 }

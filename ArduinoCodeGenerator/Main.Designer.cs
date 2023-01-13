@@ -28,39 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbFigure = new System.Windows.Forms.ComboBox();
-            this.numScale = new System.Windows.Forms.NumericUpDown();
-            this.cmbNote = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.numberBPM = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnAddNote = new System.Windows.Forms.Button();
+            this.btnRemoveLastFigure = new System.Windows.Forms.Button();
             this.btnAddPause = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbFigurePause = new System.Windows.Forms.ComboBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnRemoveLastFigure = new System.Windows.Forms.Button();
-            this.btnGenerateCodeArduino = new System.Windows.Forms.Button();
+            this.btnAddNote = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbFigure = new System.Windows.Forms.ComboBox();
+            this.numberScale = new System.Windows.Forms.NumericUpDown();
+            this.cmbNote = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblBPM = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlPentagram = new System.Windows.Forms.Panel();
-            this.imageListFigure = new System.Windows.Forms.ImageList(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numberBPM = new System.Windows.Forms.NumericUpDown();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnGenerateCodeArduino = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numScale)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numberScale)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberBPM)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -74,7 +72,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.cmbFigure);
-            this.groupBox1.Controls.Add(this.numScale);
+            this.groupBox1.Controls.Add(this.numberScale);
             this.groupBox1.Controls.Add(this.cmbNote);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Location = new System.Drawing.Point(5, 288);
@@ -84,6 +82,79 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " Write Score ";
+            // 
+            // btnRemoveLastFigure
+            // 
+            this.btnRemoveLastFigure.Location = new System.Drawing.Point(515, 39);
+            this.btnRemoveLastFigure.Name = "btnRemoveLastFigure";
+            this.btnRemoveLastFigure.Size = new System.Drawing.Size(110, 23);
+            this.btnRemoveLastFigure.TabIndex = 6;
+            this.btnRemoveLastFigure.Text = "Remove last picture";
+            this.btnRemoveLastFigure.UseVisualStyleBackColor = true;
+            // 
+            // btnAddPause
+            // 
+            this.btnAddPause.Location = new System.Drawing.Point(486, 39);
+            this.btnAddPause.Name = "btnAddPause";
+            this.btnAddPause.Size = new System.Drawing.Size(27, 23);
+            this.btnAddPause.TabIndex = 5;
+            this.btnAddPause.Text = "+";
+            this.btnAddPause.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(347, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Pause";
+            // 
+            // cmbFigurePause
+            // 
+            this.cmbFigurePause.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFigurePause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbFigurePause.FormattingEnabled = true;
+            this.cmbFigurePause.Items.AddRange(new object[] {
+            "Semibreve",
+            "Minimum",
+            "Quarter Note",
+            "Eighth Note",
+            "Sixteenth Note",
+            "Fusa",
+            "Semifusa"});
+            this.cmbFigurePause.Location = new System.Drawing.Point(344, 41);
+            this.cmbFigurePause.Name = "cmbFigurePause";
+            this.cmbFigurePause.Size = new System.Drawing.Size(140, 21);
+            this.cmbFigurePause.TabIndex = 4;
+            // 
+            // btnAddNote
+            // 
+            this.btnAddNote.Location = new System.Drawing.Point(314, 39);
+            this.btnAddNote.Name = "btnAddNote";
+            this.btnAddNote.Size = new System.Drawing.Size(27, 23);
+            this.btnAddNote.TabIndex = 3;
+            this.btnAddNote.Text = "+";
+            this.btnAddNote.UseVisualStyleBackColor = true;
+            this.btnAddNote.Click += new System.EventHandler(this.btnAddNote_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(156, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Figure";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(101, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(34, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Scale";
             // 
             // label2
             // 
@@ -112,24 +183,24 @@
             this.cmbFigure.Size = new System.Drawing.Size(159, 21);
             this.cmbFigure.TabIndex = 2;
             // 
-            // numScale
+            // numberScale
             // 
-            this.numScale.Location = new System.Drawing.Point(99, 42);
-            this.numScale.Maximum = new decimal(new int[] {
+            this.numberScale.Location = new System.Drawing.Point(99, 42);
+            this.numberScale.Maximum = new decimal(new int[] {
             5,
             0,
             0,
             0});
-            this.numScale.Minimum = new decimal(new int[] {
+            this.numberScale.Minimum = new decimal(new int[] {
             2,
             0,
             0,
             0});
-            this.numScale.Name = "numScale";
-            this.numScale.Size = new System.Drawing.Size(48, 20);
-            this.numScale.TabIndex = 1;
-            this.numScale.Value = new decimal(new int[] {
-            2,
+            this.numberScale.Name = "numberScale";
+            this.numberScale.Size = new System.Drawing.Size(48, 20);
+            this.numberScale.TabIndex = 1;
+            this.numberScale.Value = new decimal(new int[] {
+            3,
             0,
             0,
             0});
@@ -167,6 +238,46 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 250);
             this.panel1.TabIndex = 3;
+            // 
+            // panel3
+            // 
+            this.panel3.AutoScroll = true;
+            this.panel3.Controls.Add(this.lblBPM);
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Controls.Add(this.pnlPentagram);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(52, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(748, 250);
+            this.panel3.TabIndex = 4;
+            // 
+            // lblBPM
+            // 
+            this.lblBPM.AutoSize = true;
+            this.lblBPM.Location = new System.Drawing.Point(27, 51);
+            this.lblBPM.Name = "lblBPM";
+            this.lblBPM.Size = new System.Drawing.Size(19, 13);
+            this.lblBPM.TabIndex = 6;
+            this.lblBPM.Text = "60";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 34);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(33, 35);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pnlPentagram
+            // 
+            this.pnlPentagram.AutoScroll = true;
+            this.pnlPentagram.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlPentagram.BackgroundImage")));
+            this.pnlPentagram.Location = new System.Drawing.Point(-1, 69);
+            this.pnlPentagram.Name = "pnlPentagram";
+            this.pnlPentagram.Size = new System.Drawing.Size(50, 112);
+            this.pnlPentagram.TabIndex = 4;
             // 
             // pictureBox1
             // 
@@ -206,69 +317,6 @@
             0});
             this.numberBPM.ValueChanged += new System.EventHandler(this.numberBPM_ValueChanged);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(101, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Scale";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(156, 23);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Figure";
-            // 
-            // btnAddNote
-            // 
-            this.btnAddNote.Location = new System.Drawing.Point(314, 39);
-            this.btnAddNote.Name = "btnAddNote";
-            this.btnAddNote.Size = new System.Drawing.Size(27, 23);
-            this.btnAddNote.TabIndex = 3;
-            this.btnAddNote.Text = "+";
-            this.btnAddNote.UseVisualStyleBackColor = true;
-            // 
-            // btnAddPause
-            // 
-            this.btnAddPause.Location = new System.Drawing.Point(486, 39);
-            this.btnAddPause.Name = "btnAddPause";
-            this.btnAddPause.Size = new System.Drawing.Size(27, 23);
-            this.btnAddPause.TabIndex = 5;
-            this.btnAddPause.Text = "+";
-            this.btnAddPause.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(306, 22);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Pause";
-            // 
-            // cmbFigurePause
-            // 
-            this.cmbFigurePause.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFigurePause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbFigurePause.FormattingEnabled = true;
-            this.cmbFigurePause.Items.AddRange(new object[] {
-            "Semibreve",
-            "Minimum",
-            "Quarter Note",
-            "Eighth Note",
-            "Sixteenth Note",
-            "Fusa",
-            "Semifusa"});
-            this.cmbFigurePause.Location = new System.Drawing.Point(344, 41);
-            this.cmbFigurePause.Name = "cmbFigurePause";
-            this.cmbFigurePause.Size = new System.Drawing.Size(140, 21);
-            this.cmbFigurePause.TabIndex = 4;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnGenerateCodeArduino);
@@ -279,15 +327,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = " Generate ";
             // 
-            // btnRemoveLastFigure
-            // 
-            this.btnRemoveLastFigure.Location = new System.Drawing.Point(515, 39);
-            this.btnRemoveLastFigure.Name = "btnRemoveLastFigure";
-            this.btnRemoveLastFigure.Size = new System.Drawing.Size(110, 23);
-            this.btnRemoveLastFigure.TabIndex = 6;
-            this.btnRemoveLastFigure.Text = "Remove last picture";
-            this.btnRemoveLastFigure.UseVisualStyleBackColor = true;
-            // 
             // btnGenerateCodeArduino
             // 
             this.btnGenerateCodeArduino.Location = new System.Drawing.Point(6, 39);
@@ -296,52 +335,6 @@
             this.btnGenerateCodeArduino.TabIndex = 1;
             this.btnGenerateCodeArduino.Text = "Generate code for Arduino";
             this.btnGenerateCodeArduino.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            this.panel3.AutoScroll = true;
-            this.panel3.Controls.Add(this.lblBPM);
-            this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Controls.Add(this.pnlPentagram);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(52, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(748, 250);
-            this.panel3.TabIndex = 4;
-            // 
-            // lblBPM
-            // 
-            this.lblBPM.AutoSize = true;
-            this.lblBPM.Location = new System.Drawing.Point(27, 51);
-            this.lblBPM.Name = "lblBPM";
-            this.lblBPM.Size = new System.Drawing.Size(19, 13);
-            this.lblBPM.TabIndex = 6;
-            this.lblBPM.Text = "60";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 34);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 35);
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pnlPentagram
-            // 
-            this.pnlPentagram.AutoScroll = true;
-            this.pnlPentagram.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlPentagram.BackgroundImage")));
-            this.pnlPentagram.Location = new System.Drawing.Point(-1, 69);
-            this.pnlPentagram.Name = "pnlPentagram";
-            this.pnlPentagram.Size = new System.Drawing.Size(101, 112);
-            this.pnlPentagram.TabIndex = 4;
-            // 
-            // imageListFigure
-            // 
-            this.imageListFigure.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageListFigure.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageListFigure.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // Main
             // 
@@ -362,14 +355,14 @@
             this.Shown += new System.EventHandler(this.Main_Shown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numScale)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numberScale)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numberBPM)).EndInit();
-            this.groupBox2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numberBPM)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,7 +377,7 @@
         private System.Windows.Forms.NumericUpDown numberBPM;
         private System.Windows.Forms.ComboBox cmbNote;
         private System.Windows.Forms.ComboBox cmbFigure;
-        private System.Windows.Forms.NumericUpDown numScale;
+        private System.Windows.Forms.NumericUpDown numberScale;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAddPause;
         private System.Windows.Forms.Label label5;
@@ -399,7 +392,6 @@
         private System.Windows.Forms.Label lblBPM;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel pnlPentagram;
-        private System.Windows.Forms.ImageList imageListFigure;
     }
 }
 
