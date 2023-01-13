@@ -21,5 +21,10 @@ namespace ArduinoCodeGenerator
         {
             lblBPM.Text = numberBPM.Value.ToString();
         }
+
+        private void btnGenerateCodeArduino_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

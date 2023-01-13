@@ -47,16 +47,21 @@
             this.btnAddPause = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnRemoveLastFigure = new System.Windows.Forms.Button();
+            this.btnGenerateCodeArduino = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numScale)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberBPM)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnRemoveLastFigure);
             this.groupBox1.Controls.Add(this.btnAddPause);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.comboBox1);
@@ -71,8 +76,8 @@
             this.groupBox1.Location = new System.Drawing.Point(5, 288);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(300);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(791, 71);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.Size = new System.Drawing.Size(631, 71);
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " Write Score ";
             // 
@@ -219,7 +224,7 @@
             0});
             this.numberBPM.Name = "numberBPM";
             this.numberBPM.Size = new System.Drawing.Size(43, 20);
-            this.numberBPM.TabIndex = 5;
+            this.numberBPM.TabIndex = 0;
             this.numberBPM.Value = new decimal(new int[] {
             60,
             0,
@@ -250,23 +255,23 @@
             this.btnAddNote.Location = new System.Drawing.Point(270, 40);
             this.btnAddNote.Name = "btnAddNote";
             this.btnAddNote.Size = new System.Drawing.Size(27, 23);
-            this.btnAddNote.TabIndex = 6;
+            this.btnAddNote.TabIndex = 3;
             this.btnAddNote.Text = "+";
             this.btnAddNote.UseVisualStyleBackColor = true;
             // 
             // btnAddPause
             // 
-            this.btnAddPause.Location = new System.Drawing.Point(463, 39);
+            this.btnAddPause.Location = new System.Drawing.Point(420, 39);
             this.btnAddPause.Name = "btnAddPause";
             this.btnAddPause.Size = new System.Drawing.Size(27, 23);
-            this.btnAddPause.TabIndex = 9;
+            this.btnAddPause.TabIndex = 5;
             this.btnAddPause.Text = "+";
             this.btnAddPause.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(349, 22);
+            this.label5.Location = new System.Drawing.Point(306, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 8;
@@ -285,16 +290,45 @@
             "Sixteenth Note",
             "Fusa",
             "Semifusa"});
-            this.comboBox1.Location = new System.Drawing.Point(346, 41);
+            this.comboBox1.Location = new System.Drawing.Point(303, 41);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(112, 21);
-            this.comboBox1.TabIndex = 7;
+            this.comboBox1.TabIndex = 4;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnGenerateCodeArduino);
+            this.groupBox2.Location = new System.Drawing.Point(640, 288);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(156, 71);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = " Generate ";
+            // 
+            // btnRemoveLastFigure
+            // 
+            this.btnRemoveLastFigure.Location = new System.Drawing.Point(453, 39);
+            this.btnRemoveLastFigure.Name = "btnRemoveLastFigure";
+            this.btnRemoveLastFigure.Size = new System.Drawing.Size(172, 23);
+            this.btnRemoveLastFigure.TabIndex = 6;
+            this.btnRemoveLastFigure.Text = "Remove last picture";
+            this.btnRemoveLastFigure.UseVisualStyleBackColor = true;
+            // 
+            // btnGenerateCodeArduino
+            // 
+            this.btnGenerateCodeArduino.Location = new System.Drawing.Point(6, 39);
+            this.btnGenerateCodeArduino.Name = "btnGenerateCodeArduino";
+            this.btnGenerateCodeArduino.Size = new System.Drawing.Size(144, 23);
+            this.btnGenerateCodeArduino.TabIndex = 1;
+            this.btnGenerateCodeArduino.Text = "Generate code for Arduino";
+            this.btnGenerateCodeArduino.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 362);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.numberBPM);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -313,6 +347,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberBPM)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,6 +373,9 @@
         private System.Windows.Forms.Button btnAddNote;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnRemoveLastFigure;
+        private System.Windows.Forms.Button btnGenerateCodeArduino;
     }
 }
 
