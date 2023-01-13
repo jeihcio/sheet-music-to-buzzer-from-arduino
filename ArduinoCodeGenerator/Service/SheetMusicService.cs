@@ -13,10 +13,12 @@ namespace ArduinoCodeGenerator.Service
 {
     class SheetMusicService
     {
+        private readonly int offset = 10;
+
         private int GetTopNote(NoteEnum note, int scale)
         {
             var topScale = 30 * scale;
-            var top = topScale ;
+            var top = topScale;
 
             return topScale;
         }
@@ -52,7 +54,6 @@ namespace ArduinoCodeGenerator.Service
 
         public void DrawFigure(Panel pentagram, Image figure, NoteInSheetMusic note)
         {
-            var offset = 10;
             var paddingLeft = 30;
 
             var contentPane = new Panel
@@ -68,6 +69,22 @@ namespace ArduinoCodeGenerator.Service
 
             pentagram.Width += contentPane.Width + offset;
             pentagram.Controls.Add(contentPane);
+        }
+
+        public void RemoveLastFigure(Panel pnlPentagram)
+        {
+            var indexLastFigure = pnlPentagram.Controls.Count - 1;
+            if (indexLastFigure < 0) return;
+
+            var lastFigure = pnlPentagram.Controls[indexLastFigure];
+
+            pnlPentagram.AutoScroll = false;
+
+            pnlPentagram.Width -= lastFigure.Width + offset;
+            pnlPentagram.Controls.Remove(lastFigure);
+
+            pnlPentagram.AutoScroll = true;
+            pnlPentagram.Refresh();
         }
     }
 }

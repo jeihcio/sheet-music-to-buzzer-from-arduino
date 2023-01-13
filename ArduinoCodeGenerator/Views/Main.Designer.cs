@@ -91,6 +91,7 @@
             this.btnRemoveLastFigure.TabIndex = 6;
             this.btnRemoveLastFigure.Text = "Remove last picture";
             this.btnRemoveLastFigure.UseVisualStyleBackColor = true;
+            this.btnRemoveLastFigure.Click += new System.EventHandler(this.btnRemoveLastFigure_Click);
             // 
             // btnAddPause
             // 

@@ -47,5 +47,10 @@ namespace ArduinoCodeGenerator
 
             controller.DrawFigure(pnlPentagram, figure, noteScale);
         }
+
+        private void btnRemoveLastFigure_Click(object sender, EventArgs e)
+        {
+            controller.RemoveLastFigure(pnlPentagram);
+        }
     }
 }

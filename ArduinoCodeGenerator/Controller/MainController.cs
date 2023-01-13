@@ -41,5 +41,10 @@ namespace ArduinoCodeGenerator.Controller
         {
             sheetMusicService.DrawFigure(pentagram, figure, note);
         }
+
+        public void RemoveLastFigure(Panel pnlPentagram)
+        {
+            sheetMusicService.RemoveLastFigure(pnlPentagram);
+        }
     }
 }
