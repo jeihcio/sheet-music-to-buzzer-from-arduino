@@ -84,7 +84,6 @@ namespace ArduinoCodeGenerator.Service
             pnlPentagram.Controls.Remove(lastFigure);
 
             pnlPentagram.AutoScroll = true;
-            pnlPentagram.Refresh();
         }
     }
 }

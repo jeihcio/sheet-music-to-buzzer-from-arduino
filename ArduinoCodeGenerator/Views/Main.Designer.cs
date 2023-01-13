@@ -243,6 +243,7 @@
             // panel3
             // 
             this.panel3.AutoScroll = true;
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.Controls.Add(this.lblBPM);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.pnlPentagram);
@@ -274,10 +275,11 @@
             // pnlPentagram
             // 
             this.pnlPentagram.AutoScroll = true;
-            this.pnlPentagram.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlPentagram.BackgroundImage")));
-            this.pnlPentagram.Location = new System.Drawing.Point(-1, 69);
+            this.pnlPentagram.BackColor = System.Drawing.Color.Transparent;
+            this.pnlPentagram.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlPentagram.Location = new System.Drawing.Point(0, 0);
             this.pnlPentagram.Name = "pnlPentagram";
-            this.pnlPentagram.Size = new System.Drawing.Size(50, 112);
+            this.pnlPentagram.Size = new System.Drawing.Size(50, 250);
             this.pnlPentagram.TabIndex = 4;
             // 
             // pictureBox1
