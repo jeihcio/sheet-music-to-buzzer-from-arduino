@@ -216,18 +216,18 @@
             this.cmbNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbNote.FormattingEnabled = true;
             this.cmbNote.Items.AddRange(new object[] {
-            "Dó",
-            "Dó#",
-            "Ré",
-            "Ré#",
-            "Mi",
-            "Fá",
-            "Fá#",
-            "Sol",
-            "Sol #",
-            "Lá",
-            "Lá #",
-            "Si"});
+            "C",
+            "C#",
+            "D",
+            "D#",
+            "E",
+            "F",
+            "F#",
+            "G",
+            "G#",
+            "A",
+            "A#",
+            "B"});
             this.cmbNote.Location = new System.Drawing.Point(7, 41);
             this.cmbNote.Name = "cmbNote";
             this.cmbNote.Size = new System.Drawing.Size(68, 21);
