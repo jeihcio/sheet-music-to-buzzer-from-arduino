@@ -115,5 +115,20 @@
   <ItemGroup>
     <None Include="Assets\Images\Notes\sixteenthNote.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Images\Notes\eighthNotePause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Images\Notes\minimumPause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Images\Notes\quarterNotePause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Images\Notes\semibrevePause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Images\Notes\sixteenthNotePause.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

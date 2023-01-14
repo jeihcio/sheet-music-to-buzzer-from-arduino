@@ -108,29 +108,29 @@ namespace ArduinoCodeGenerator.Service
                 image.RotateFlip(RotateFlipType.Rotate180FlipNone);
         }
 
-        public Image GetImage(FigureEnum figure, NoteInSheetMusic note)
+        public Image GetImage(FigureEnum figure, NoteInSheetMusic note, bool isPause)
         {
             Image result = null;
             switch (figure)
             {
                 case FigureEnum.Semibreve:
-                    result = Resources.semibreve;
+                    result = isPause ? Resources.semibrevePause : Resources.semibreve;
                     break;
 
                 case FigureEnum.Minimum:
-                    result = Resources.minimum;
+                    result = isPause ? Resources.minimumPause : Resources.minimum;
                     break;
 
                 case FigureEnum.QuarterNote:
-                    result = Resources.quarterNote;
+                    result = isPause ? Resources.quarterNotePause : Resources.quarterNote;
                     break;
 
                 case FigureEnum.EighthNote:
-                    result = Resources.eighthNote;
+                    result = isPause ? Resources.eighthNotePause : Resources.eighthNote;
                     break;
 
                 case FigureEnum.SixteenthNote:
-                    result = Resources.sixteenthNote;
+                    result = isPause ? Resources.sixteenthNotePause : Resources.sixteenthNote;
                     break;
             }
 

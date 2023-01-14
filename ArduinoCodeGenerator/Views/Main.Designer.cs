@@ -105,6 +105,7 @@
             this.btnAddPause.TabIndex = 5;
             this.btnAddPause.Text = "+";
             this.btnAddPause.UseVisualStyleBackColor = true;
+            this.btnAddPause.Click += new System.EventHandler(this.btnAddPause_Click);
             // 
             // label5
             // 

@@ -73,9 +73,29 @@ namespace ArduinoCodeGenerator.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eighthNotePause {
+            get {
+                object obj = ResourceManager.GetObject("eighthNotePause", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minimum {
             get {
                 object obj = ResourceManager.GetObject("minimum", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minimumPause {
+            get {
+                object obj = ResourceManager.GetObject("minimumPause", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,6 +113,16 @@ namespace ArduinoCodeGenerator.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap quarterNotePause {
+            get {
+                object obj = ResourceManager.GetObject("quarterNotePause", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap semibreve {
             get {
                 object obj = ResourceManager.GetObject("semibreve", resourceCulture);
@@ -103,9 +133,29 @@ namespace ArduinoCodeGenerator.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap semibrevePause {
+            get {
+                object obj = ResourceManager.GetObject("semibrevePause", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sixteenthNote {
             get {
                 object obj = ResourceManager.GetObject("sixteenthNote", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sixteenthNotePause {
+            get {
+                object obj = ResourceManager.GetObject("sixteenthNotePause", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
