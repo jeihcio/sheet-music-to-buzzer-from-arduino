@@ -22,11 +22,11 @@ namespace ArduinoCodeGenerator.Service
             dialogService = new DialogService();
         }
 
-        private int GetMarginNote(FigureEnum figure, NoteInSheetMusicModel note)
+        private int GetMarginNote(FigureEnum figure, NoteInSheetMusicModel note, bool isPause)
         {
             if (figure == FigureEnum.Semibreve) return 0;
 
-            var IsRotatedImage = IsRotateImage(figure, note);
+            var IsRotatedImage = IsRotateImage(figure, note, isPause);
             var result = IsRotatedImage ? 0 : -43;
 
             return result;
@@ -75,7 +75,7 @@ namespace ArduinoCodeGenerator.Service
             }
             else
             {
-                int marginNote = GetMarginNote(figure, note);
+                int marginNote = GetMarginNote(figure, note, isPause);
                 var topScale = startPentagram + topDoScale[note.Scale - 2];
 
                 int offset = -7;
@@ -111,19 +111,20 @@ namespace ArduinoCodeGenerator.Service
             }
         }
 
-        private bool IsRotateImage(FigureEnum figure, NoteInSheetMusicModel note)
+        private bool IsRotateImage(FigureEnum figure, NoteInSheetMusicModel note, bool isPause)
         {
             var scaleDo4 = 4;
 
             if (figure == FigureEnum.Semibreve) return false;
+            if (isPause) return false;
             if (note.Scale < scaleDo4 && note.Note != NoteEnum.NoteSi) return false;
 
             return true;
         }
 
-        public void RotateImageIfNeeded(Image image, FigureEnum figure, NoteInSheetMusicModel note)
+        public void RotateImageIfNeeded(Image image, FigureEnum figure, NoteInSheetMusicModel note, bool isPause)
         {
-            if (IsRotateImage(figure, note))
+            if (IsRotateImage(figure, note, isPause))
                 image.RotateFlip(RotateFlipType.Rotate180FlipNone);
         }
 
@@ -153,7 +154,7 @@ namespace ArduinoCodeGenerator.Service
                     break;
             }
 
-            RotateImageIfNeeded(result, figure, note);
+            RotateImageIfNeeded(result, figure, note, isPause);
             return result;
         }
 
