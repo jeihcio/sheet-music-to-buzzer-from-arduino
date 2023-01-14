@@ -158,12 +158,12 @@ namespace ArduinoCodeGenerator.Service
             return result;
         }
 
-        public NoteInSheetMusicModel GetNoteInSheetMusic(NoteEnum note, NumericUpDown scale, FigureEnum figure, bool isPause)
+        public NoteInSheetMusicModel GetNoteInSheetMusic(NoteEnum note, int scale, FigureEnum figure, bool isPause)
         {
             var result = new NoteInSheetMusicModel
             {
                 Note = note,
-                Scale = (int)scale.Value,
+                Scale = scale,
                 Duration = figure,
                 Pause = isPause
             };
@@ -191,6 +191,13 @@ namespace ArduinoCodeGenerator.Service
             pentagram.Controls.Add(contentPane);
         }
 
+        public void RemoveAll(Panel pnlPentagram)
+        {
+            var length = pnlPentagram.Controls.Count;
+            for (int i = 0; i < length; i++)
+                RemoveLastFigure(pnlPentagram);
+        }
+
         public void RemoveLastFigure(Panel pnlPentagram)
         {
             var indexLastFigure = pnlPentagram.Controls.Count - 1;
@@ -211,7 +218,7 @@ namespace ArduinoCodeGenerator.Service
             var path = OpenDialog();
             if (String.IsNullOrEmpty(path)) return false;
 
-            return SaveImageAs(path, pnlPentagram) ;
+            return SaveImageAs(path, pnlPentagram);
         }
     }
 }

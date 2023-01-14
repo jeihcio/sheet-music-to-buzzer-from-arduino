@@ -25,16 +25,27 @@ namespace ArduinoCodeGenerator.Controller
             listNoteInSheetMusic = new List<NoteInSheetMusicModel>();
         }
 
+        private void RemoveAll(Panel pnlPentagram)
+        {
+            sheetMusicService.RemoveAll(pnlPentagram);
+            listNoteInSheetMusic.RemoveAll(x => x != null);
+        }
+
+        public void AddFigure(Panel pnlPentagram, Image image, NoteInSheetMusicModel noteScale, FigureEnum figure, bool isPause)
+        {
+            sheetMusicService.DrawFigure(pnlPentagram, image, noteScale, figure, isPause);
+            listNoteInSheetMusic.Add(noteScale);
+        }
+
         public void AddFigure(Panel pnlPentagram, ComboBox cmbNote, ComboBox cmbFigure, NumericUpDown numberScale, bool isPause)
         {
             var figure = (FigureEnum)cmbFigure.SelectedIndex;
             var note = (NoteEnum)cmbNote.SelectedIndex;
 
-            var noteScale = sheetMusicService.GetNoteInSheetMusic(note, numberScale, figure, isPause);
+            var noteScale = sheetMusicService.GetNoteInSheetMusic(note, (int)numberScale.Value, figure, isPause);
             var image = sheetMusicService.GetImage(figure, noteScale, isPause);
 
-            sheetMusicService.DrawFigure(pnlPentagram, image, noteScale, figure, isPause);
-            listNoteInSheetMusic.Add(noteScale);
+            AddFigure(pnlPentagram, image, noteScale, figure, isPause);
         }
 
         public void RemoveLastFigure(Panel pnlPentagram)
@@ -57,11 +68,22 @@ namespace ArduinoCodeGenerator.Controller
                 MessageBox.Show("Saved successfully!", "Exporte file");
         }
 
-        public void ImportFile()
+        public void ImportFile(Panel pnlPentagram, NumericUpDown numberBPM)
         {
             var file = fileService.OpenFile();
             if (file != null)
             {
+                RemoveAll(pnlPentagram);
+
+                numberBPM.Value = (int)file.BPM;
+                file.listNoteInSheetMusic.ForEach((notes) =>
+                {
+                    var noteScale = sheetMusicService.GetNoteInSheetMusic(notes.Note, notes.Scale, notes.Duration, notes.Pause);
+                    var image = sheetMusicService.GetImage(notes.Duration, noteScale, notes.Pause);
+
+                    AddFigure(pnlPentagram, image, noteScale, notes.Duration, notes.Pause);
+                });
+
                 MessageBox.Show("Successfully imported!", "Exporte file");
             }
         }

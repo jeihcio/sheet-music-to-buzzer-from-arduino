@@ -68,7 +68,7 @@ namespace ArduinoCodeGenerator
 
         private void importToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            controller.ImportFile();
+            controller.ImportFile(pnlPentagram, numberBPM);
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
