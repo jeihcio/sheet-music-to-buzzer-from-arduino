@@ -16,7 +16,7 @@ namespace ArduinoCodeGenerator.Service
     {
         private readonly int offset = 20;
 
-        private int GetTopNote(NoteEnum note, int scale)
+        private int GetTopNote(Image figure, NoteInSheetMusic note)
         {            
             int[] topDoScale = {
                 51, // do2
@@ -42,10 +42,10 @@ namespace ArduinoCodeGenerator.Service
             };
            
             var startPentagram = 160;
-            var topScale = startPentagram + topDoScale[scale - 2];
+            var topScale = startPentagram + topDoScale[note.Scale - 2];
 
             int sizeNote = -7;
-            int topNote = sizeNote * notes[(int)note];
+            int topNote = sizeNote * notes[(int)note.Note];
             var top = topScale + topNote;
 
             return top;
@@ -123,8 +123,7 @@ namespace ArduinoCodeGenerator.Service
             var result = new NoteInSheetMusic
             {
                 Note = note,
-                Scale = (int)scale.Value,
-                Top = GetTopNote(note, (int)scale.Value)
+                Scale = (int)scale.Value
             };
 
             return result;
@@ -133,6 +132,7 @@ namespace ArduinoCodeGenerator.Service
         public void DrawFigure(Panel pentagram, Image figure, NoteInSheetMusic note)
         {
             var paddingLeft = 30;
+            var top = GetTopNote(figure, note);
 
             var contentPane = new Panel
             {
@@ -140,7 +140,7 @@ namespace ArduinoCodeGenerator.Service
                 Height = figure.Height,
                 BackgroundImage = figure,
                 BackColor = Color.Transparent,
-                Top = note.Top
+                Top = top
             };
 
             contentPane.Left = paddingLeft + pentagram.Width - contentPane.Width;
