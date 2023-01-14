@@ -38,16 +38,16 @@ namespace ArduinoCodeGenerator.Service
             int[] notes =
             {
                 0, // do
-                0, // do #
+                //0, // do #
                 1, // ré
-                1, // ré #,
+                //1, // ré #,
                 2, // mi
                 3, // fá
-                3, // fá #
+                //3, // fá #
                 4, // sol
-                4, // sol #
+                //4, // sol #
                 5, // lá
-                5, // lá #
+                //5, // lá #
                 6  // si
             };
 

@@ -9,16 +9,16 @@ namespace ArduinoCodeGenerator.Entities.Enum
     enum NoteEnum
     {
         NoteDo = 0,
-        NoteDoSharp =1,
+        //NoteDoSharp =1,
         NoteRe = 2,
-        NoteReSharp = 3,
+        //NoteReSharp = 3,
         NoteMi = 4,
         NoteFa = 5,
-        NoteFaSharp = 6,
+        //NoteFaSharp = 6,
         NoteSol = 7,
-        NoteSolSharp = 8,
+        //NoteSolSharp = 8,
         NoteLa = 9,
-        NoteLaSharp = 10,
+        //NoteLaSharp = 10,
         NoteSi = 11
     }
 }

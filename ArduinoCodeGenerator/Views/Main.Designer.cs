@@ -215,16 +215,11 @@
             this.cmbNote.FormattingEnabled = true;
             this.cmbNote.Items.AddRange(new object[] {
             "C",
-            "C#",
             "D",
-            "D#",
             "E",
             "F",
-            "F#",
             "G",
-            "G#",
             "A",
-            "A#",
             "B"});
             this.cmbNote.Location = new System.Drawing.Point(7, 41);
             this.cmbNote.Name = "cmbNote";
