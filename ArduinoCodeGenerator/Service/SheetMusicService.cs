@@ -86,12 +86,32 @@ namespace ArduinoCodeGenerator.Service
             Image result = null;
             switch (figure)
             {
-                case FigureEnum.semibreve:
+                case FigureEnum.Semibreve:
                     result = Resources.semibreve;
                     break;
 
-                default:
-                    result = null;
+                case FigureEnum.Minimum:
+                    result = Resources.minimum;
+                    break;
+
+                case FigureEnum.QuarterNote:
+                    result = Resources.quarterNote;
+                    break;
+
+                case FigureEnum.EighthNote:
+                    result = Resources.eighthNote;
+                    break;
+
+                case FigureEnum.SixteenthNote:
+                    result = Resources.sixteenthNote;
+                    break;
+
+                case FigureEnum.Fusa:
+                    result = Resources.fusa;
+                    break;
+
+                case FigureEnum.Semifusa:
+                    result = Resources.semifusa;
                     break;
             }
 

@@ -8,6 +8,12 @@ namespace ArduinoCodeGenerator.Entities.Enum
 {
     enum FigureEnum
     {
-        semibreve = 0
+        Semibreve,
+        Minimum,
+        QuarterNote,
+        EighthNote,
+        SixteenthNote,
+        Fusa,
+        Semifusa
     }
 }
