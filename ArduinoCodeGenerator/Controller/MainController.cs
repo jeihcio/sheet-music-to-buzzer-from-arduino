@@ -23,26 +23,24 @@ namespace ArduinoCodeGenerator.Controller
             listNoteInSheetMusic = new List<NoteInSheetMusic>();
         }
 
-        private NoteInSheetMusic GetNoteInSheetMusic(ComboBox comboNote, NumericUpDown scale)
-        {
-            var note = (NoteEnum)comboNote.SelectedIndex;
-            var result = sheetMusicService.GetNoteInSheetMusic(note, scale);
-
-            return result;
-        }
-
         public void AddFigure(Panel pnlPentagram, ComboBox cmbNote, ComboBox cmbFigure, NumericUpDown numberScale, bool isPause)
         {
-            var noteScale = GetNoteInSheetMusic(cmbNote, numberScale);
             var figure = (FigureEnum)cmbFigure.SelectedIndex;
+            var note = (NoteEnum)cmbNote.SelectedIndex;
+
+            var noteScale = sheetMusicService.GetNoteInSheetMusic(note, numberScale, figure, isPause);
             var image = sheetMusicService.GetImage(figure, noteScale, isPause);
 
             sheetMusicService.DrawFigure(pnlPentagram, image, noteScale, figure, isPause);
+            listNoteInSheetMusic.Add(noteScale);
         }
 
         public void RemoveLastFigure(Panel pnlPentagram)
         {
+            var last = listNoteInSheetMusic.LastOrDefault();
+        
             sheetMusicService.RemoveLastFigure(pnlPentagram);
+            listNoteInSheetMusic.Remove(last);
         }
 
         public void SaveImageAs(Panel pnlPentagram)

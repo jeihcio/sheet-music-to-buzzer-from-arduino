@@ -156,12 +156,14 @@ namespace ArduinoCodeGenerator.Service
             return result;
         }
 
-        public NoteInSheetMusic GetNoteInSheetMusic(NoteEnum note, NumericUpDown scale)
+        public NoteInSheetMusic GetNoteInSheetMusic(NoteEnum note, NumericUpDown scale, FigureEnum figure, bool isPause)
         {
             var result = new NoteInSheetMusic
             {
                 Note = note,
-                Scale = (int)scale.Value
+                Scale = (int)scale.Value,
+                Duration = figure,
+                Pause = isPause
             };
 
             return result;
