@@ -288,7 +288,7 @@
             // 
             this.lblBPM.AutoSize = true;
             this.lblBPM.ContextMenuStrip = this.MenuPentagram;
-            this.lblBPM.Location = new System.Drawing.Point(29, 42);
+            this.lblBPM.Location = new System.Drawing.Point(29, 51);
             this.lblBPM.Name = "lblBPM";
             this.lblBPM.Size = new System.Drawing.Size(19, 13);
             this.lblBPM.TabIndex = 8;
@@ -299,7 +299,7 @@
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.ContextMenuStrip = this.MenuPentagram;
-            this.pictureBox2.Location = new System.Drawing.Point(-2, 24);
+            this.pictureBox2.Location = new System.Drawing.Point(-2, 33);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(33, 35);
             this.pictureBox2.TabIndex = 7;
