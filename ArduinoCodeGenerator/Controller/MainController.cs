@@ -40,7 +40,7 @@ namespace ArduinoCodeGenerator.Controller
             var figure = (FigureEnum)cmbFigure.SelectedIndex;
             var image = GetImage(figure, noteScale, isPause);
 
-            sheetMusicService.DrawFigure(pnlPentagram, image, noteScale, figure);
+            sheetMusicService.DrawFigure(pnlPentagram, image, noteScale, figure, isPause);
         }
 
         public void RemoveLastFigure(Panel pnlPentagram)

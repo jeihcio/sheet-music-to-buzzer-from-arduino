@@ -26,7 +26,7 @@ namespace ArduinoCodeGenerator.Service
             return result;
         }
 
-        private int GetTopNote(Image image, NoteInSheetMusic note, FigureEnum figure)
+        private int GetTopNote(Image image, NoteInSheetMusic note, FigureEnum figure, bool isPause)
         {
             int[] topDoScale = {
                 51, // do2
@@ -51,13 +51,31 @@ namespace ArduinoCodeGenerator.Service
                 6  // si
             };
 
-            var startPentagram = 160;
-            int marginNote = GetMarginNote(figure, note);
-            var topScale = startPentagram + topDoScale[note.Scale - 2];
+            int[] pauses =
+            {
+                108, // Semibreve
+                110, // Minimum
+                94, // Quarter Note
+                106, // Eighth Note
+                106, // Sixteenth Note
+            };
 
-            int offset = -7;
-            int topNote = (offset * notes[(int)note.Note]) + marginNote;
-            int top = topScale + topNote;
+            int top = 0;
+            var startPentagram = 160;
+
+            if (isPause)
+            {
+                top = pauses[(int)figure];
+            }
+            else
+            {
+                int marginNote = GetMarginNote(figure, note);
+                var topScale = startPentagram + topDoScale[note.Scale - 2];
+
+                int offset = -7;
+                int topNote = (offset * notes[(int)note.Note]) + marginNote;
+                top = topScale + topNote;
+            }
 
             return top;
         }
@@ -149,10 +167,10 @@ namespace ArduinoCodeGenerator.Service
             return result;
         }
 
-        public void DrawFigure(Panel pentagram, Image image, NoteInSheetMusic note, FigureEnum figure)
+        public void DrawFigure(Panel pentagram, Image image, NoteInSheetMusic note, FigureEnum figure, bool isPause)
         {
             var paddingLeft = 30;
-            var top = GetTopNote(image, note, figure);
+            var top = GetTopNote(image, note, figure, isPause);
 
             var contentPane = new Panel
             {
