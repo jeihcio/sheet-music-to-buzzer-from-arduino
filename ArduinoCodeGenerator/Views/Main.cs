@@ -42,7 +42,7 @@ namespace ArduinoCodeGenerator
 
         private void btnAddNote_Click(object sender, EventArgs e)
         {
-            controller.DrawFigure(pnlPentagram, cmbNote, cmbFigure, numberScale, false);            
+            controller.AddFigure(pnlPentagram, cmbNote, cmbFigure, numberScale, false);            
         }
 
         private void btnRemoveLastFigure_Click(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace ArduinoCodeGenerator
 
         private void btnAddPause_Click(object sender, EventArgs e)
         {
-            controller.DrawFigure(pnlPentagram, cmbNote, cmbFigurePause, numberScale, true);
+            controller.AddFigure(pnlPentagram, cmbNote, cmbFigurePause, numberScale, true);
         }
     }
 }

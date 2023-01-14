@@ -12,5 +12,9 @@ namespace ArduinoCodeGenerator.Entities
         public NoteEnum Note { get; set; }
 
         public int Scale { get; set; }
+
+        public FigureEnum Duration { get; set; }
+
+        public bool Pause { get; set; }
     }
 }
