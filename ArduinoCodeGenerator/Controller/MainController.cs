@@ -21,12 +21,9 @@ namespace ArduinoCodeGenerator.Controller
             sheetMusicService = new SheetMusicService();
         }
 
-        private Image GetImage(ComboBox comboFigure, NoteInSheetMusic note)
-        {
-            var figure = (FigureEnum)comboFigure.SelectedIndex;
-            var result = sheetMusicService.GetImage(figure, note);
-
-            return result;
+        private Image GetImage(FigureEnum figure, NoteInSheetMusic note)
+        {            
+            return sheetMusicService.GetImage(figure, note);
         }
 
         private NoteInSheetMusic GetNoteInSheetMusic(ComboBox comboNote, NumericUpDown scale)
@@ -40,9 +37,10 @@ namespace ArduinoCodeGenerator.Controller
         public void DrawFigure(Panel pnlPentagram, ComboBox cmbNote, ComboBox cmbFigure, NumericUpDown numberScale)
         {
             var noteScale = GetNoteInSheetMusic(cmbNote, numberScale);
-            var figure = GetImage(cmbFigure, noteScale);
+            var figure = (FigureEnum)cmbFigure.SelectedIndex;
+            var image = GetImage(figure, noteScale);
 
-            sheetMusicService.DrawFigure(pnlPentagram, figure, noteScale);
+            sheetMusicService.DrawFigure(pnlPentagram, image, noteScale, figure);
         }
 
         public void RemoveLastFigure(Panel pnlPentagram)
