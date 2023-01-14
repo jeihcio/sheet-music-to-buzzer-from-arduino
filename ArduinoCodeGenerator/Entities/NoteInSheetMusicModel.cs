@@ -17,9 +17,5 @@ namespace ArduinoCodeGenerator.Entities
         public FigureEnum Duration { get; set; }
 
         public bool Pause { get; set; }
-
-        public NoteInSheetMusicModel()
-        {
-        }
     }
 }
