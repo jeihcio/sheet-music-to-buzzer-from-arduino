@@ -21,7 +21,7 @@ namespace ArduinoCodeGenerator.Service
             int[] topDoScale = {
                 50, // do2
                 0,  // do3
-                -48, // do4
+                -51, // do4
                 -100, // do5
             };
 
@@ -41,10 +41,10 @@ namespace ArduinoCodeGenerator.Service
                 6  // si
             };
            
-            var startPentagram = 158;
+            var startPentagram = 160;
             var topScale = startPentagram + topDoScale[scale - 2];
 
-            int sizeNote = -8;
+            int sizeNote = -7;
             int topNote = sizeNote * notes[(int)note];
             var top = topScale + topNote;
 
