@@ -21,7 +21,7 @@ namespace ArduinoCodeGenerator.Controller
         public MainController()
         {
             fileService = new FileService();
-            sheetMusicService = new SheetMusicService();            
+            sheetMusicService = new SheetMusicService();
             listNoteInSheetMusic = new List<NoteInSheetMusicModel>();
         }
 
@@ -55,6 +55,15 @@ namespace ArduinoCodeGenerator.Controller
         {
             if (fileService.ExportFile(listNoteInSheetMusic, bpm))
                 MessageBox.Show("Saved successfully!", "Exporte file");
+        }
+
+        public void ImportFile()
+        {
+            var file = fileService.OpenFile();
+            if (file != null)
+            {
+                MessageBox.Show("Successfully imported!", "Exporte file");
+            }
         }
     }
 }

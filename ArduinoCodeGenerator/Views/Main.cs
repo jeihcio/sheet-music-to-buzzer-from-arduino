@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -63,6 +64,17 @@ namespace ArduinoCodeGenerator
         private void exportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             controller.ExportFile(numberBPM.Value);
+        }
+
+        private void importToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            controller.ImportFile();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo sInfo = new ProcessStartInfo("https://github.com/jeihcio/sheet-music-to-buzzer-from-arduino");
+            Process.Start(sInfo);
         }
     }
 }

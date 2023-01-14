@@ -19,6 +19,16 @@ namespace ArduinoCodeGenerator.Service
             dialogService = new DialogService();
         }
 
+        public ExportFileModel OpenFile()
+        {
+            var filter = "Json-File | *.json";
+            var file = dialogService.OpenDialog(filter);
+            if (String.IsNullOrEmpty(file)) return null;
+
+            var result = JsonConvert.DeserializeObject<ExportFileModel>(file);
+            return result;
+        }
+
         public bool ExportFile(List<NoteInSheetMusicModel> listNoteInSheetMusic, decimal bpm)
         {
             var filter = "Json-File | *.json";
