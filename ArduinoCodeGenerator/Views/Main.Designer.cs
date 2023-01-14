@@ -125,9 +125,7 @@
             "Minimum",
             "Quarter Note",
             "Eighth Note",
-            "Sixteenth Note",
-            "Fusa",
-            "Semifusa"});
+            "Sixteenth Note"});
             this.cmbFigurePause.Location = new System.Drawing.Point(323, 41);
             this.cmbFigurePause.Name = "cmbFigurePause";
             this.cmbFigurePause.Size = new System.Drawing.Size(160, 21);
