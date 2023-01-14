@@ -132,14 +132,6 @@ namespace ArduinoCodeGenerator.Service
                 case FigureEnum.SixteenthNote:
                     result = Resources.sixteenthNote;
                     break;
-
-                case FigureEnum.Fusa:
-                    result = Resources.fusa;
-                    break;
-
-                case FigureEnum.Semifusa:
-                    result = Resources.semifusa;
-                    break;
             }
 
             RotateImageIfNeeded(result, figure, note);

@@ -121,9 +121,6 @@
   <data name="eighthNote" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Images\Notes\eighthNote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fusa" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Images\Notes\fusa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="minimum" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Images\Notes\minimum.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -132,9 +129,6 @@
   </data>
   <data name="semibreve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Images\Notes\semibreve.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="semifusa" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Images\Notes\semifusa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sixteenthNote" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Images\Notes\sixteenthNote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

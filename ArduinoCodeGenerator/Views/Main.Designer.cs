@@ -180,9 +180,7 @@
             "Minimum",
             "Quarter Note",
             "Eighth Note",
-            "Sixteenth Note",
-            "Fusa",
-            "Semifusa"});
+            "Sixteenth Note"});
             this.cmbFigure.Location = new System.Drawing.Point(131, 41);
             this.cmbFigure.Name = "cmbFigure";
             this.cmbFigure.Size = new System.Drawing.Size(160, 21);
