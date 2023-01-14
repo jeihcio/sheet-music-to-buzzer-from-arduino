@@ -16,6 +16,36 @@ namespace ArduinoCodeGenerator.Service
     {
         private readonly int offset = 20;
 
+        private int GetMarginNote(FigureEnum figure)
+        {
+            switch (figure)
+            {
+                case FigureEnum.Semibreve:
+                    return 0;
+
+                case FigureEnum.Minimum:
+                    return -43;
+
+                case FigureEnum.QuarterNote:
+                    return -7;
+
+                case FigureEnum.EighthNote:
+                    return -7;
+
+                case FigureEnum.SixteenthNote:
+                    return -7;
+
+                case FigureEnum.Fusa:
+                    return -7;
+
+                case FigureEnum.Semifusa:
+                    return -7;
+
+                default:
+                    return 0;
+            }
+        }
+
         private int GetTopNote(Image image, NoteInSheetMusic note, FigureEnum figure)
         {            
             int[] topDoScale = {
@@ -42,11 +72,12 @@ namespace ArduinoCodeGenerator.Service
             };
            
             var startPentagram = 160;
+            int marginNote = GetMarginNote(figure);
             var topScale = startPentagram + topDoScale[note.Scale - 2];
 
-            int marginNote = -7;
-            int topNote = marginNote * notes[(int)note.Note];
-            var top = topScale + topNote;
+            int offset = -7;
+            int topNote = (offset * notes[(int)note.Note]) + marginNote;
+            int top = topScale + topNote;
 
             return top;
         }
