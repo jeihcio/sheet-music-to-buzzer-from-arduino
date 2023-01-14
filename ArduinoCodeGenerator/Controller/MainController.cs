@@ -73,6 +73,7 @@ namespace ArduinoCodeGenerator.Controller
             var file = fileService.OpenFile();
             if (file != null)
             {
+                pnlPentagram.Visible = false;
                 RemoveAll(pnlPentagram);
 
                 numberBPM.Value = (int)file.BPM;
@@ -84,6 +85,7 @@ namespace ArduinoCodeGenerator.Controller
                     AddFigure(pnlPentagram, image, noteScale, notes.Duration, notes.Pause);
                 });
 
+                pnlPentagram.Visible = true;
                 MessageBox.Show("Successfully imported!", "Exporte file");
             }
         }
