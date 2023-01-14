@@ -16,15 +16,17 @@ namespace ArduinoCodeGenerator.Service
     {
         private readonly int offset = 20;
 
-        private int GetMarginNote(FigureEnum figure)
+        private int GetMarginNote(FigureEnum figure, NoteInSheetMusic note)
         {
+            var IsRotatedImage = IsRotateImage(figure, note);
+
             switch (figure)
             {
                 case FigureEnum.Semibreve:
                     return 0;
 
                 case FigureEnum.Minimum:
-                    return -43;
+                    return IsRotatedImage ? 0 : -43;
 
                 case FigureEnum.QuarterNote:
                     return -7;
@@ -47,7 +49,7 @@ namespace ArduinoCodeGenerator.Service
         }
 
         private int GetTopNote(Image image, NoteInSheetMusic note, FigureEnum figure)
-        {            
+        {
             int[] topDoScale = {
                 51, // do2
                 0,  // do3
@@ -70,9 +72,9 @@ namespace ArduinoCodeGenerator.Service
                 5, // lá #
                 6  // si
             };
-           
+
             var startPentagram = 160;
-            int marginNote = GetMarginNote(figure);
+            int marginNote = GetMarginNote(figure, note);
             var topScale = startPentagram + topDoScale[note.Scale - 2];
 
             int offset = -7;
@@ -112,6 +114,22 @@ namespace ArduinoCodeGenerator.Service
             }
         }
 
+        private bool IsRotateImage(FigureEnum figure, NoteInSheetMusic note)
+        {
+            var scaleDo4 = 4;
+
+            if (figure == FigureEnum.Semibreve) return false;
+            if (note.Scale < scaleDo4 && note.Note != NoteEnum.NoteSi) return false;
+
+            return true;
+        }
+
+        public void RotateImageIfNeeded(Image image, FigureEnum figure, NoteInSheetMusic note)
+        {
+            if (IsRotateImage(figure, note))
+                image.RotateFlip(RotateFlipType.Rotate180FlipNone);
+        }
+
         public Image GetImage(FigureEnum figure, NoteInSheetMusic note)
         {
             Image result = null;
@@ -146,6 +164,7 @@ namespace ArduinoCodeGenerator.Service
                     break;
             }
 
+            RotateImageIfNeeded(result, figure, note);
             return result;
         }
 
