@@ -18,34 +18,12 @@ namespace ArduinoCodeGenerator.Service
 
         private int GetMarginNote(FigureEnum figure, NoteInSheetMusic note)
         {
+            if (figure == FigureEnum.Semibreve) return 0;
+
             var IsRotatedImage = IsRotateImage(figure, note);
+            var result = IsRotatedImage ? 0 : -43;
 
-            switch (figure)
-            {
-                case FigureEnum.Semibreve:
-                    return 0;
-
-                case FigureEnum.Minimum:
-                    return IsRotatedImage ? 0 : -43;
-
-                case FigureEnum.QuarterNote:
-                    return -7;
-
-                case FigureEnum.EighthNote:
-                    return -7;
-
-                case FigureEnum.SixteenthNote:
-                    return -7;
-
-                case FigureEnum.Fusa:
-                    return -7;
-
-                case FigureEnum.Semifusa:
-                    return -7;
-
-                default:
-                    return 0;
-            }
+            return result;
         }
 
         private int GetTopNote(Image image, NoteInSheetMusic note, FigureEnum figure)
