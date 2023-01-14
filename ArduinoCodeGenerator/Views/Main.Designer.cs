@@ -47,23 +47,22 @@
             this.MenuPentagram = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.saveImageAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlPentagram = new System.Windows.Forms.Panel();
-            this.lblBPM = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.numberBPM = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnGenerateCodeArduino = new System.Windows.Forms.Button();
+            this.lblBPM = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberScale)).BeginInit();
             this.pnlMain.SuspendLayout();
             this.panel3.SuspendLayout();
             this.MenuPentagram.SuspendLayout();
-            this.pnlPentagram.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberBPM)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -250,6 +249,8 @@
             this.panel3.AutoScroll = true;
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.ContextMenuStrip = this.MenuPentagram;
+            this.panel3.Controls.Add(this.lblBPM);
+            this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.pnlPentagram);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(52, 0);
@@ -276,34 +277,11 @@
             this.pnlPentagram.AutoScroll = true;
             this.pnlPentagram.BackColor = System.Drawing.Color.Transparent;
             this.pnlPentagram.ContextMenuStrip = this.MenuPentagram;
-            this.pnlPentagram.Controls.Add(this.lblBPM);
-            this.pnlPentagram.Controls.Add(this.pictureBox2);
             this.pnlPentagram.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlPentagram.Location = new System.Drawing.Point(0, 0);
             this.pnlPentagram.Name = "pnlPentagram";
             this.pnlPentagram.Size = new System.Drawing.Size(55, 250);
             this.pnlPentagram.TabIndex = 4;
-            // 
-            // lblBPM
-            // 
-            this.lblBPM.AutoSize = true;
-            this.lblBPM.ContextMenuStrip = this.MenuPentagram;
-            this.lblBPM.Location = new System.Drawing.Point(29, 51);
-            this.lblBPM.Name = "lblBPM";
-            this.lblBPM.Size = new System.Drawing.Size(19, 13);
-            this.lblBPM.TabIndex = 8;
-            this.lblBPM.Text = "60";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.ContextMenuStrip = this.MenuPentagram;
-            this.pictureBox2.Location = new System.Drawing.Point(-2, 33);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 35);
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -363,6 +341,27 @@
             this.btnGenerateCodeArduino.Text = "Generate code for Arduino";
             this.btnGenerateCodeArduino.UseVisualStyleBackColor = true;
             // 
+            // lblBPM
+            // 
+            this.lblBPM.AutoSize = true;
+            this.lblBPM.ContextMenuStrip = this.MenuPentagram;
+            this.lblBPM.Location = new System.Drawing.Point(31, 63);
+            this.lblBPM.Name = "lblBPM";
+            this.lblBPM.Size = new System.Drawing.Size(19, 13);
+            this.lblBPM.TabIndex = 10;
+            this.lblBPM.Text = "60";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.ContextMenuStrip = this.MenuPentagram;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 45);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(33, 35);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,13 +384,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.numberScale)).EndInit();
             this.pnlMain.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.MenuPentagram.ResumeLayout(false);
-            this.pnlPentagram.ResumeLayout(false);
-            this.pnlPentagram.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberBPM)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
