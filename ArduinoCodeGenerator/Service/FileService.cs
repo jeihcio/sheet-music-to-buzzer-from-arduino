@@ -29,6 +29,19 @@ namespace ArduinoCodeGenerator.Service
             return result;
         }
 
+        public bool SaveFile(string path, string text)
+        {
+            try
+            {
+                File.WriteAllText(path, text);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public bool ExportFile(List<NoteInSheetMusicModel> listNoteInSheetMusic, decimal bpm)
         {
             var filter = "Json-File | *.json";

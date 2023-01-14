@@ -29,7 +29,7 @@ namespace ArduinoCodeGenerator
 
         private void btnGenerateCodeArduino_Click(object sender, EventArgs e)
         {
-
+            controller.ExportCodeFromArduino(numberBPM.Value);
         }
 
         private void Main_Shown(object sender, EventArgs e)

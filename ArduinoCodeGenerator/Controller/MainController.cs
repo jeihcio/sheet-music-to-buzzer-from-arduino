@@ -17,12 +17,14 @@ namespace ArduinoCodeGenerator.Controller
         private readonly SheetMusicService sheetMusicService;
         private readonly FileService fileService;
         private readonly List<NoteInSheetMusicModel> listNoteInSheetMusic;
+        private readonly ArduinoService arduinoService;
 
         public MainController()
         {
             fileService = new FileService();
             sheetMusicService = new SheetMusicService();
             listNoteInSheetMusic = new List<NoteInSheetMusicModel>();
+            arduinoService = new ArduinoService();
         }
 
         private void RemoveAll(Panel pnlPentagram)
@@ -86,8 +88,14 @@ namespace ArduinoCodeGenerator.Controller
                 });
 
                 pnlPentagram.Visible = true;
-                MessageBox.Show("Successfully imported!", "Exporte file");
+                MessageBox.Show("Successfully imported!", "Import file");
             }
+        }
+
+        public void ExportCodeFromArduino(decimal bpm)
+        {
+            if (arduinoService.GenerateCode(listNoteInSheetMusic, bpm))
+                MessageBox.Show("Code generated successfully!!", "Exporte code");
         }
     }
 }
