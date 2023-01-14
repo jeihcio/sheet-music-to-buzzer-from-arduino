@@ -42,10 +42,7 @@ namespace ArduinoCodeGenerator
 
         private void btnAddNote_Click(object sender, EventArgs e)
         {
-            var noteScale = controller.GetNoteInSheetMusic(cmbNote, numberScale);
-            var figure = controller.GetImage(cmbFigure, noteScale);
-
-            controller.DrawFigure(pnlPentagram, figure, noteScale);
+            controller.DrawFigure(pnlPentagram, cmbNote, cmbFigure, numberScale);            
         }
 
         private void btnRemoveLastFigure_Click(object sender, EventArgs e)
