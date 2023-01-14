@@ -19,10 +19,10 @@ namespace ArduinoCodeGenerator.Service
         private int GetTopNote(NoteEnum note, int scale)
         {            
             int[] topDoScale = {
-                50, // do2
+                51, // do2
                 0,  // do3
                 -51, // do4
-                -100, // do5
+                -101, // do5
             };
 
             int[] notes =
