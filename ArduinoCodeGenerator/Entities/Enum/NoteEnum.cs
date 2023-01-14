@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArduinoCodeGenerator.Entities.Enum
 {
-    enum NoteEnum
+    public enum NoteEnum
     {
         NoteDo = 0,
         //NoteDoSharp =1,

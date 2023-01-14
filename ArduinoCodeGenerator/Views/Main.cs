@@ -42,7 +42,7 @@ namespace ArduinoCodeGenerator
 
         private void btnAddNote_Click(object sender, EventArgs e)
         {
-            controller.AddFigure(pnlPentagram, cmbNote, cmbFigure, numberScale, false);            
+            controller.AddFigure(pnlPentagram, cmbNote, cmbFigure, numberScale, false);
         }
 
         private void btnRemoveLastFigure_Click(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace ArduinoCodeGenerator
 
         private void exportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            controller.ExportFile();
+            controller.ExportFile(numberBPM.Value);
         }
     }
 }

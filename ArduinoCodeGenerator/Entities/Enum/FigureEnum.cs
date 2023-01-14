@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArduinoCodeGenerator.Entities.Enum
 {
-    enum FigureEnum
+    public enum FigureEnum
     {
         Semibreve,
         Minimum,

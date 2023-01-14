@@ -22,7 +22,7 @@ namespace ArduinoCodeGenerator.Service
             dialogService = new DialogService();
         }
 
-        private int GetMarginNote(FigureEnum figure, NoteInSheetMusic note)
+        private int GetMarginNote(FigureEnum figure, NoteInSheetMusicModel note)
         {
             if (figure == FigureEnum.Semibreve) return 0;
 
@@ -32,7 +32,7 @@ namespace ArduinoCodeGenerator.Service
             return result;
         }
 
-        private int GetTopNote(Image image, NoteInSheetMusic note, FigureEnum figure, bool isPause)
+        private int GetTopNote(Image image, NoteInSheetMusicModel note, FigureEnum figure, bool isPause)
         {
             int[] topDoScale = {
                 51, // do2
@@ -111,7 +111,7 @@ namespace ArduinoCodeGenerator.Service
             }
         }
 
-        private bool IsRotateImage(FigureEnum figure, NoteInSheetMusic note)
+        private bool IsRotateImage(FigureEnum figure, NoteInSheetMusicModel note)
         {
             var scaleDo4 = 4;
 
@@ -121,13 +121,13 @@ namespace ArduinoCodeGenerator.Service
             return true;
         }
 
-        public void RotateImageIfNeeded(Image image, FigureEnum figure, NoteInSheetMusic note)
+        public void RotateImageIfNeeded(Image image, FigureEnum figure, NoteInSheetMusicModel note)
         {
             if (IsRotateImage(figure, note))
                 image.RotateFlip(RotateFlipType.Rotate180FlipNone);
         }
 
-        public Image GetImage(FigureEnum figure, NoteInSheetMusic note, bool isPause)
+        public Image GetImage(FigureEnum figure, NoteInSheetMusicModel note, bool isPause)
         {
             Image result = null;
             switch (figure)
@@ -157,9 +157,9 @@ namespace ArduinoCodeGenerator.Service
             return result;
         }
 
-        public NoteInSheetMusic GetNoteInSheetMusic(NoteEnum note, NumericUpDown scale, FigureEnum figure, bool isPause)
+        public NoteInSheetMusicModel GetNoteInSheetMusic(NoteEnum note, NumericUpDown scale, FigureEnum figure, bool isPause)
         {
-            var result = new NoteInSheetMusic
+            var result = new NoteInSheetMusicModel
             {
                 Note = note,
                 Scale = (int)scale.Value,
@@ -170,7 +170,7 @@ namespace ArduinoCodeGenerator.Service
             return result;
         }
 
-        public void DrawFigure(Panel pentagram, Image image, NoteInSheetMusic note, FigureEnum figure, bool isPause)
+        public void DrawFigure(Panel pentagram, Image image, NoteInSheetMusicModel note, FigureEnum figure, bool isPause)
         {
             var paddingLeft = 30;
             var top = GetTopNote(image, note, figure, isPause);

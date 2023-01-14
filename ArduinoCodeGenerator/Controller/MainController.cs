@@ -16,13 +16,13 @@ namespace ArduinoCodeGenerator.Controller
     {
         private readonly SheetMusicService sheetMusicService;
         private readonly FileService fileService;
-        private readonly List<NoteInSheetMusic> listNoteInSheetMusic;
+        private readonly List<NoteInSheetMusicModel> listNoteInSheetMusic;
 
         public MainController()
         {
             fileService = new FileService();
             sheetMusicService = new SheetMusicService();            
-            listNoteInSheetMusic = new List<NoteInSheetMusic>();
+            listNoteInSheetMusic = new List<NoteInSheetMusicModel>();
         }
 
         public void AddFigure(Panel pnlPentagram, ComboBox cmbNote, ComboBox cmbFigure, NumericUpDown numberScale, bool isPause)
@@ -51,9 +51,9 @@ namespace ArduinoCodeGenerator.Controller
                 MessageBox.Show("Saved successfully!", "Save Image As...");
         }
 
-        public void ExportFile()
+        public void ExportFile(decimal bpm)
         {
-            if (fileService.ExportFile(listNoteInSheetMusic))
+            if (fileService.ExportFile(listNoteInSheetMusic, bpm))
                 MessageBox.Show("Saved successfully!", "Exporte file");
         }
     }

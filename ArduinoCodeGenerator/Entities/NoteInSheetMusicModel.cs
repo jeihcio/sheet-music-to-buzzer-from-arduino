@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace ArduinoCodeGenerator.Entities
 {
-    class NoteInSheetMusic
+    public class NoteInSheetMusicModel
     {
         public NoteEnum Note { get; set; }
 
@@ -16,5 +17,9 @@ namespace ArduinoCodeGenerator.Entities
         public FigureEnum Duration { get; set; }
 
         public bool Pause { get; set; }
+
+        public NoteInSheetMusicModel()
+        {
+        }
     }
 }
