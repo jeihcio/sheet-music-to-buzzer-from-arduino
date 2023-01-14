@@ -73,16 +73,6 @@ namespace ArduinoCodeGenerator.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fusa {
-            get {
-                object obj = ResourceManager.GetObject("fusa", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap minimum {
             get {
                 object obj = ResourceManager.GetObject("minimum", resourceCulture);
@@ -106,16 +96,6 @@ namespace ArduinoCodeGenerator.Properties {
         internal static System.Drawing.Bitmap semibreve {
             get {
                 object obj = ResourceManager.GetObject("semibreve", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap semifusa {
-            get {
-                object obj = ResourceManager.GetObject("semifusa", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
