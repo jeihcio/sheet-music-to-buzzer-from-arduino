@@ -15,11 +15,13 @@ namespace ArduinoCodeGenerator.Controller
     class MainController
     {
         private readonly SheetMusicService sheetMusicService;
+        private readonly FileService fileService;
         private readonly List<NoteInSheetMusic> listNoteInSheetMusic;
 
         public MainController()
         {
-            sheetMusicService = new SheetMusicService();
+            fileService = new FileService();
+            sheetMusicService = new SheetMusicService();            
             listNoteInSheetMusic = new List<NoteInSheetMusic>();
         }
 
@@ -38,14 +40,21 @@ namespace ArduinoCodeGenerator.Controller
         public void RemoveLastFigure(Panel pnlPentagram)
         {
             var last = listNoteInSheetMusic.LastOrDefault();
-        
+
             sheetMusicService.RemoveLastFigure(pnlPentagram);
             listNoteInSheetMusic.Remove(last);
         }
 
         public void SaveImageAs(Panel pnlPentagram)
         {
-            sheetMusicService.SaveImageAs(pnlPentagram);
+            if (sheetMusicService.SaveImageAs(pnlPentagram))
+                MessageBox.Show("Saved successfully!", "Save Image As...");
+        }
+
+        public void ExportFile()
+        {
+            if (fileService.ExportFile(listNoteInSheetMusic))
+                MessageBox.Show("Saved successfully!", "Exporte file");
         }
     }
 }

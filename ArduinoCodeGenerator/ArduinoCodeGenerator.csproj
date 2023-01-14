@@ -55,6 +55,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Service\DialogService.cs" />
+    <Compile Include="Service\FileService.cs" />
     <Compile Include="Views\Main.cs">
       <SubType>Form</SubType>
     </Compile>

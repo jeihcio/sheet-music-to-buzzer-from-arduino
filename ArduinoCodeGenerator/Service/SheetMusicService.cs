@@ -15,6 +15,12 @@ namespace ArduinoCodeGenerator.Service
     class SheetMusicService
     {
         private readonly int offset = 20;
+        private readonly DialogService dialogService;
+
+        public SheetMusicService()
+        {
+            dialogService = new DialogService();
+        }
 
         private int GetMarginNote(FigureEnum figure, NoteInSheetMusic note)
         {
@@ -82,13 +88,8 @@ namespace ArduinoCodeGenerator.Service
 
         private string OpenDialog()
         {
-            SaveFileDialog saveFile = new SaveFileDialog
-            {
-                Filter = "JPEG Image (.jpeg)|*.jpeg"
-            };
-            saveFile.ShowDialog();
-
-            return saveFile.FileName;
+            var filter = "JPEG Image (.jpeg)|*.jpeg";
+            return dialogService.SaveDialog(filter);
         }
 
         private bool SaveImageAs(string path, Panel pnlPentagram)
@@ -204,13 +205,12 @@ namespace ArduinoCodeGenerator.Service
             pnlPentagram.AutoScroll = true;
         }
 
-        public void SaveImageAs(Panel pnlPentagram)
+        public bool SaveImageAs(Panel pnlPentagram)
         {
             var path = OpenDialog();
-            if (String.IsNullOrEmpty(path)) return;
+            if (String.IsNullOrEmpty(path)) return false;
 
-            if (SaveImageAs(path, pnlPentagram))
-                MessageBox.Show("Saved successfully!", "Save Image As...");
+            return SaveImageAs(path, pnlPentagram) ;
         }
     }
 }

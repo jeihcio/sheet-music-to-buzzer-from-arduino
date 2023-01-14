@@ -59,5 +59,10 @@ namespace ArduinoCodeGenerator
         {
             controller.AddFigure(pnlPentagram, cmbNote, cmbFigurePause, numberScale, true);
         }
+
+        private void exportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            controller.ExportFile();
+        }
     }
 }

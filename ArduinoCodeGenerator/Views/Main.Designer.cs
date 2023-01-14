@@ -42,27 +42,33 @@
             this.cmbFigure = new System.Windows.Forms.ComboBox();
             this.numberScale = new System.Windows.Forms.NumericUpDown();
             this.cmbNote = new System.Windows.Forms.ComboBox();
-            this.pnlMain = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.MenuPentagram = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.saveImageAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblBPM = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pnlPentagram = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.numberBPM = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnGenerateCodeArduino = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblBPM = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pnlPentagram = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberScale)).BeginInit();
-            this.pnlMain.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.MenuPentagram.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberBPM)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.pnlMain.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -79,7 +85,7 @@
             this.groupBox1.Controls.Add(this.numberScale);
             this.groupBox1.Controls.Add(this.cmbNote);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(5, 288);
+            this.groupBox1.Location = new System.Drawing.Point(5, 311);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(300);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(631, 71);
@@ -225,16 +231,87 @@
             this.cmbNote.Size = new System.Drawing.Size(68, 21);
             this.cmbNote.TabIndex = 0;
             // 
+            // MenuPentagram
+            // 
+            this.MenuPentagram.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveImageAsToolStripMenuItem});
+            this.MenuPentagram.Name = "MenuPentagram";
+            this.MenuPentagram.Size = new System.Drawing.Size(163, 26);
+            // 
+            // saveImageAsToolStripMenuItem
+            // 
+            this.saveImageAsToolStripMenuItem.Name = "saveImageAsToolStripMenuItem";
+            this.saveImageAsToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.saveImageAsToolStripMenuItem.Text = "Save Image As....";
+            this.saveImageAsToolStripMenuItem.Click += new System.EventHandler(this.saveImageAsToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 286);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "BPM:";
+            // 
+            // numberBPM
+            // 
+            this.numberBPM.Location = new System.Drawing.Point(51, 284);
+            this.numberBPM.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.numberBPM.Name = "numberBPM";
+            this.numberBPM.Size = new System.Drawing.Size(43, 20);
+            this.numberBPM.TabIndex = 0;
+            this.numberBPM.Value = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.numberBPM.ValueChanged += new System.EventHandler(this.numberBPM_ValueChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnGenerateCodeArduino);
+            this.groupBox2.Location = new System.Drawing.Point(640, 311);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(156, 71);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = " Generate ";
+            // 
+            // btnGenerateCodeArduino
+            // 
+            this.btnGenerateCodeArduino.Location = new System.Drawing.Point(6, 39);
+            this.btnGenerateCodeArduino.Name = "btnGenerateCodeArduino";
+            this.btnGenerateCodeArduino.Size = new System.Drawing.Size(144, 23);
+            this.btnGenerateCodeArduino.TabIndex = 1;
+            this.btnGenerateCodeArduino.Text = "Generate code for Arduino";
+            this.btnGenerateCodeArduino.UseVisualStyleBackColor = true;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.Text = "menuMain";
+            // 
             // pnlMain
             // 
             this.pnlMain.BackColor = System.Drawing.Color.White;
             this.pnlMain.Controls.Add(this.panel3);
             this.pnlMain.Controls.Add(this.pictureBox1);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlMain.Location = new System.Drawing.Point(0, 0);
+            this.pnlMain.Location = new System.Drawing.Point(0, 24);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(800, 250);
-            this.pnlMain.TabIndex = 3;
+            this.pnlMain.TabIndex = 6;
             // 
             // panel3
             // 
@@ -249,20 +326,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(748, 250);
             this.panel3.TabIndex = 4;
-            // 
-            // MenuPentagram
-            // 
-            this.MenuPentagram.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveImageAsToolStripMenuItem});
-            this.MenuPentagram.Name = "MenuPentagram";
-            this.MenuPentagram.Size = new System.Drawing.Size(163, 26);
-            // 
-            // saveImageAsToolStripMenuItem
-            // 
-            this.saveImageAsToolStripMenuItem.Name = "saveImageAsToolStripMenuItem";
-            this.saveImageAsToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.saveImageAsToolStripMenuItem.Text = "Save Image As....";
-            this.saveImageAsToolStripMenuItem.Click += new System.EventHandler(this.saveImageAsToolStripMenuItem_Click);
             // 
             // lblBPM
             // 
@@ -308,61 +371,44 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // fileToolStripMenuItem
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 263);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "BPM:";
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importToolStripMenuItem,
+            this.exportToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
             // 
-            // numberBPM
+            // aboutToolStripMenuItem
             // 
-            this.numberBPM.Location = new System.Drawing.Point(51, 261);
-            this.numberBPM.Maximum = new decimal(new int[] {
-            300,
-            0,
-            0,
-            0});
-            this.numberBPM.Name = "numberBPM";
-            this.numberBPM.Size = new System.Drawing.Size(43, 20);
-            this.numberBPM.TabIndex = 0;
-            this.numberBPM.Value = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-            this.numberBPM.ValueChanged += new System.EventHandler(this.numberBPM_ValueChanged);
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
             // 
-            // groupBox2
+            // importToolStripMenuItem
             // 
-            this.groupBox2.Controls.Add(this.btnGenerateCodeArduino);
-            this.groupBox2.Location = new System.Drawing.Point(640, 288);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(156, 71);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = " Generate ";
+            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importToolStripMenuItem.Text = "Import";
             // 
-            // btnGenerateCodeArduino
+            // exportToolStripMenuItem
             // 
-            this.btnGenerateCodeArduino.Location = new System.Drawing.Point(6, 39);
-            this.btnGenerateCodeArduino.Name = "btnGenerateCodeArduino";
-            this.btnGenerateCodeArduino.Size = new System.Drawing.Size(144, 23);
-            this.btnGenerateCodeArduino.TabIndex = 1;
-            this.btnGenerateCodeArduino.Text = "Generate code for Arduino";
-            this.btnGenerateCodeArduino.UseVisualStyleBackColor = true;
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToolStripMenuItem.Text = "Export";
+            this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 362);
+            this.ClientSize = new System.Drawing.Size(800, 385);
+            this.Controls.Add(this.pnlMain);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.numberBPM);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -374,14 +420,16 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberScale)).EndInit();
+            this.MenuPentagram.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numberBPM)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.pnlMain.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.MenuPentagram.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numberBPM)).EndInit();
-            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,8 +438,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Panel pnlMain;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numberBPM;
         private System.Windows.Forms.ComboBox cmbNote;
@@ -407,12 +453,19 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnRemoveLastFigure;
         private System.Windows.Forms.Button btnGenerateCodeArduino;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel pnlPentagram;
         private System.Windows.Forms.ContextMenuStrip MenuPentagram;
         private System.Windows.Forms.ToolStripMenuItem saveImageAsToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblBPM;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel pnlPentagram;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 
