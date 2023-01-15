@@ -2,6 +2,9 @@
 
 This project is used to write small scores and convert the written sounds into code to be used in an Arduino project with a buzzer.
 
+## Download
+To download the program just [click here](https://github.com/jeihcio/sheet-music-to-buzzer-from-arduino/releases) and download the zip file for the latest version
+
 ## Sheet music editor
 
 ![editor](Readme/screen.png)
