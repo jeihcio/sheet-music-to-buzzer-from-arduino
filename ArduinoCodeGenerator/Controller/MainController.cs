@@ -39,7 +39,7 @@ namespace ArduinoCodeGenerator.Controller
             listNoteInSheetMusic.Add(noteScale);
         }
 
-        public void AddFigure(Panel pnlPentagram, ComboBox cmbNote, ComboBox cmbFigure, NumericUpDown numberScale, bool isPause)
+        public void AddFigure(Panel pnlPentagram, ListControl cmbNote, ListControl cmbFigure, NumericUpDown numberScale, bool isPause)
         {
             var figure = (FigureEnum)cmbFigure.SelectedIndex;
             var note = (NoteEnum)cmbNote.SelectedIndex;

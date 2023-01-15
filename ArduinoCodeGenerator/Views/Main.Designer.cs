@@ -34,14 +34,11 @@
             this.btnRemoveLastFigure = new System.Windows.Forms.Button();
             this.btnAddPause = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.cmbFigurePause = new System.Windows.Forms.ComboBox();
             this.btnAddNote = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmbFigure = new System.Windows.Forms.ComboBox();
             this.numberScale = new System.Windows.Forms.NumericUpDown();
-            this.cmbNote = new System.Windows.Forms.ComboBox();
             this.MenuPentagram = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.saveImageAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,6 +56,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlPentagram = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cmbNote = new System.Windows.Forms.ListBox();
+            this.cmbFigure = new System.Windows.Forms.ListBox();
+            this.cmbFigurePause = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberScale)).BeginInit();
             this.MenuPentagram.SuspendLayout();
@@ -73,29 +73,29 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbFigurePause);
+            this.groupBox1.Controls.Add(this.cmbFigure);
+            this.groupBox1.Controls.Add(this.cmbNote);
             this.groupBox1.Controls.Add(this.btnRemoveLastFigure);
             this.groupBox1.Controls.Add(this.btnAddPause);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.cmbFigurePause);
             this.groupBox1.Controls.Add(this.btnAddNote);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.cmbFigure);
             this.groupBox1.Controls.Add(this.numberScale);
-            this.groupBox1.Controls.Add(this.cmbNote);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Location = new System.Drawing.Point(5, 311);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(300);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(631, 71);
+            this.groupBox1.Size = new System.Drawing.Size(631, 144);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " Write Score ";
             // 
             // btnRemoveLastFigure
             // 
-            this.btnRemoveLastFigure.Location = new System.Drawing.Point(515, 39);
+            this.btnRemoveLastFigure.Location = new System.Drawing.Point(517, 41);
             this.btnRemoveLastFigure.Name = "btnRemoveLastFigure";
             this.btnRemoveLastFigure.Size = new System.Drawing.Size(110, 23);
             this.btnRemoveLastFigure.TabIndex = 6;
@@ -105,7 +105,7 @@
             // 
             // btnAddPause
             // 
-            this.btnAddPause.Location = new System.Drawing.Point(485, 39);
+            this.btnAddPause.Location = new System.Drawing.Point(488, 41);
             this.btnAddPause.Name = "btnAddPause";
             this.btnAddPause.Size = new System.Drawing.Size(27, 23);
             this.btnAddPause.TabIndex = 5;
@@ -116,31 +116,15 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(319, 22);
+            this.label5.Location = new System.Drawing.Point(322, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Pause";
             // 
-            // cmbFigurePause
-            // 
-            this.cmbFigurePause.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFigurePause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbFigurePause.FormattingEnabled = true;
-            this.cmbFigurePause.Items.AddRange(new object[] {
-            "Semibreve",
-            "Minimum",
-            "Quarter Note",
-            "Eighth Note",
-            "Sixteenth Note"});
-            this.cmbFigurePause.Location = new System.Drawing.Point(323, 41);
-            this.cmbFigurePause.Name = "cmbFigurePause";
-            this.cmbFigurePause.Size = new System.Drawing.Size(160, 21);
-            this.cmbFigurePause.TabIndex = 4;
-            // 
             // btnAddNote
             // 
-            this.btnAddNote.Location = new System.Drawing.Point(293, 39);
+            this.btnAddNote.Location = new System.Drawing.Point(293, 41);
             this.btnAddNote.Name = "btnAddNote";
             this.btnAddNote.Size = new System.Drawing.Size(27, 23);
             this.btnAddNote.TabIndex = 3;
@@ -151,7 +135,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(128, 23);
+            this.label4.Location = new System.Drawing.Point(75, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 5;
@@ -160,7 +144,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(82, 23);
+            this.label3.Location = new System.Drawing.Point(238, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 4;
@@ -169,31 +153,15 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 23);
+            this.label2.Location = new System.Drawing.Point(4, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Note";
             // 
-            // cmbFigure
-            // 
-            this.cmbFigure.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFigure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbFigure.FormattingEnabled = true;
-            this.cmbFigure.Items.AddRange(new object[] {
-            "Semibreve",
-            "Minimum",
-            "Quarter Note",
-            "Eighth Note",
-            "Sixteenth Note"});
-            this.cmbFigure.Location = new System.Drawing.Point(131, 41);
-            this.cmbFigure.Name = "cmbFigure";
-            this.cmbFigure.Size = new System.Drawing.Size(160, 21);
-            this.cmbFigure.TabIndex = 2;
-            // 
             // numberScale
             // 
-            this.numberScale.Location = new System.Drawing.Point(79, 42);
+            this.numberScale.Location = new System.Drawing.Point(241, 42);
             this.numberScale.Maximum = new decimal(new int[] {
             4,
             0,
@@ -205,31 +173,13 @@
             0,
             0});
             this.numberScale.Name = "numberScale";
-            this.numberScale.Size = new System.Drawing.Size(48, 20);
+            this.numberScale.Size = new System.Drawing.Size(49, 20);
             this.numberScale.TabIndex = 1;
             this.numberScale.Value = new decimal(new int[] {
             3,
             0,
             0,
             0});
-            // 
-            // cmbNote
-            // 
-            this.cmbNote.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbNote.FormattingEnabled = true;
-            this.cmbNote.Items.AddRange(new object[] {
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "A",
-            "B"});
-            this.cmbNote.Location = new System.Drawing.Point(7, 41);
-            this.cmbNote.Name = "cmbNote";
-            this.cmbNote.Size = new System.Drawing.Size(68, 21);
-            this.cmbNote.TabIndex = 0;
             // 
             // MenuPentagram
             // 
@@ -277,7 +227,7 @@
             this.groupBox2.Controls.Add(this.btnGenerateCodeArduino);
             this.groupBox2.Location = new System.Drawing.Point(640, 311);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(156, 71);
+            this.groupBox2.Size = new System.Drawing.Size(156, 144);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = " Generate ";
@@ -402,11 +352,55 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // cmbNote
+            // 
+            this.cmbNote.FormattingEnabled = true;
+            this.cmbNote.Items.AddRange(new object[] {
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "A",
+            "B"});
+            this.cmbNote.Location = new System.Drawing.Point(7, 42);
+            this.cmbNote.Name = "cmbNote";
+            this.cmbNote.Size = new System.Drawing.Size(68, 95);
+            this.cmbNote.TabIndex = 9;
+            // 
+            // cmbFigure
+            // 
+            this.cmbFigure.FormattingEnabled = true;
+            this.cmbFigure.Items.AddRange(new object[] {
+            "Semibreve",
+            "Minimum",
+            "Quarter Note",
+            "Eighth Note",
+            "Sixteenth Note"});
+            this.cmbFigure.Location = new System.Drawing.Point(78, 42);
+            this.cmbFigure.Name = "cmbFigure";
+            this.cmbFigure.Size = new System.Drawing.Size(160, 95);
+            this.cmbFigure.TabIndex = 10;
+            // 
+            // cmbFigurePause
+            // 
+            this.cmbFigurePause.FormattingEnabled = true;
+            this.cmbFigurePause.Items.AddRange(new object[] {
+            "Semibreve",
+            "Minimum",
+            "Quarter Note",
+            "Eighth Note",
+            "Sixteenth Note"});
+            this.cmbFigurePause.Location = new System.Drawing.Point(325, 42);
+            this.cmbFigurePause.Name = "cmbFigurePause";
+            this.cmbFigurePause.Size = new System.Drawing.Size(160, 95);
+            this.cmbFigurePause.TabIndex = 11;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 385);
+            this.ClientSize = new System.Drawing.Size(800, 459);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox2);
@@ -443,13 +437,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numberBPM;
-        private System.Windows.Forms.ComboBox cmbNote;
-        private System.Windows.Forms.ComboBox cmbFigure;
         private System.Windows.Forms.NumericUpDown numberScale;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAddPause;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cmbFigurePause;
         private System.Windows.Forms.Button btnAddNote;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -469,6 +460,9 @@
         private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ListBox cmbFigure;
+        private System.Windows.Forms.ListBox cmbNote;
+        private System.Windows.Forms.ListBox cmbFigurePause;
     }
 }
 
