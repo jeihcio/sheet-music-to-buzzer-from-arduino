@@ -17,6 +17,7 @@
 #define NOTE_G4  392
 #define NOTE_A4  440
 #define NOTE_B4  494
+#define REST      0
 
 // buzzer
 int buzzer = 10;
