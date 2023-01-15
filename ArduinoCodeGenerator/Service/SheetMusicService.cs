@@ -142,21 +142,23 @@ namespace ArduinoCodeGenerator.Service
 
             var scaleDo3 = 3;
             var scaleDo4 = 4;
+            var width = figure == FigureEnum.Semibreve ? 32 : 26;
 
             // dash at the head of the note
-            if ((note.Note == NoteEnum.NoteDo && note.Scale == scaleDo3) || 
-                ((note.Note == NoteEnum.NoteLa || note.Note == NoteEnum.NoteSi) && note.Scale == scaleDo4))
+            if ((note.Note == NoteEnum.NoteDo && note.Scale == scaleDo3) || (note.Note == NoteEnum.NoteLa && note.Scale == scaleDo4))
             {
                 var y = figure == FigureEnum.Semibreve ? 7 : 51;
-                var width = figure == FigureEnum.Semibreve ? 32: 26;
-
                 DrawDash(image, y, width);
             }
-
             // dash on the stem of the note
-            if (note.Note == NoteEnum.NoteSi && note.Scale == scaleDo4)
+            else if (note.Note == NoteEnum.NoteSi && note.Scale == scaleDo4)
             {
+                var y = figure == FigureEnum.Semibreve ? 15 : 44;
 
+                if (figure == FigureEnum.EighthNote)
+                    y -= 2;
+                
+                DrawDash(image, y, width);
             }
         }
 
