@@ -122,6 +122,44 @@ namespace ArduinoCodeGenerator.Service
             return true;
         }
 
+        private void DrawDash(Image image, int y, int width)
+        {
+            using (Graphics graphic = Graphics.FromImage(image))
+            {
+                var x = 0;              
+                var height = 3;
+
+                Brush brush = new SolidBrush(Color.Black);
+                Rectangle rectangle = new Rectangle(x, y, width, height);
+
+                graphic.FillRectangle(brush, rectangle);
+            }
+        }
+
+        public void AddDashIfNeeded(Image image, FigureEnum figure, NoteInSheetMusicModel note, bool isPause)
+        {
+            if (isPause) return;
+
+            var scaleDo3 = 3;
+            var scaleDo4 = 4;
+
+            // dash at the head of the note
+            if ((note.Note == NoteEnum.NoteDo && note.Scale == scaleDo3) || 
+                ((note.Note == NoteEnum.NoteLa || note.Note == NoteEnum.NoteSi) && note.Scale == scaleDo4))
+            {
+                var y = figure == FigureEnum.Semibreve ? 7 : 51;
+                var width = figure == FigureEnum.Semibreve ? 32: 26;
+
+                DrawDash(image, y, width);
+            }
+
+            // dash on the stem of the note
+            if (note.Note == NoteEnum.NoteSi && note.Scale == scaleDo4)
+            {
+
+            }
+        }
+
         public void RotateImageIfNeeded(Image image, FigureEnum figure, NoteInSheetMusicModel note, bool isPause)
         {
             if (IsRotateImage(figure, note, isPause))
@@ -154,7 +192,9 @@ namespace ArduinoCodeGenerator.Service
                     break;
             }
 
+            AddDashIfNeeded(result, figure, note, isPause);
             RotateImageIfNeeded(result, figure, note, isPause);
+
             return result;
         }
 
