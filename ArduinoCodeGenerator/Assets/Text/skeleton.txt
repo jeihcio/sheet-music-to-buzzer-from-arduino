@@ -22,12 +22,12 @@
 int buzzer = 10;
 
 // BPM
-int time={Number_BPM};
+int time = {Number_BPM};
 
 // melody notes followed by duration.
 int melody[] = {
 	{Melody}
-}
+};
 
 // notes in vector
 int notes = sizeof(melody) / sizeof(melody[0]) / 2;
