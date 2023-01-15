@@ -26,22 +26,65 @@ namespace ArduinoCodeGenerator.Service
             return dialogService.SaveDialog(filter);
         }
 
-        private string GenerateCode(string skeleton, List<NoteInSheetMusicModel> Notes, int bpm)
+        private string GenerateCodeMelody(List<NoteInSheetMusicModel> notes)
         {
+            var indentation = "\t";
+            var result = string.Empty;
+            var listNotes = new List<string>();
+            
+            var index = 0;
+            notes.ForEach((note) =>
+            {
+                var codeNote = string.Empty;
+                if (note.Pause)
+                {
+
+                }
+                else
+                {
+                    var nameNote = Enum.GetName(typeof(NoteEnum), note.Note);
+
+                    nameNote = nameNote
+                        .Replace("Note", "NOTE_")
+                        .Replace("Do", "C")
+                        .Replace("Re", "D")
+                        .Replace("Mi", "E")
+                        .Replace("Fa", "F")
+                        .Replace("Sol", "G")
+                        .Replace("La", "A")
+                        .Replace("Si", "B");
+
+                    codeNote = indentation + nameNote + note.Scale.ToString();
+                }
+
+                if (!string.IsNullOrEmpty(codeNote))
+                    listNotes.Add(codeNote);
+
+                index++;
+            });
+
+            result = String.Join(", \n", listNotes.ToArray());
+            return result;
+        }
+
+        private string GenerateCode(string skeleton, List<NoteInSheetMusicModel> notes, int bpm)
+        {
+            var melody = GenerateCodeMelody(notes);
+
             var result = skeleton
                 .Replace("{Number_BPM}", bpm.ToString())
-                .Replace("{Melody}", "");
+                .Replace("{Melody}", melody);
 
             return result;
         }
 
-        public bool GenerateCode(List<NoteInSheetMusicModel> Notes, decimal bpm)
+        public bool GenerateCode(List<NoteInSheetMusicModel> notes, decimal bpm)
         {
             var path = OpenDialog();
             if (String.IsNullOrEmpty(path)) return false;
 
             var skeleton = Resources.skeleton;
-            var code = GenerateCode(skeleton, Notes, (int)bpm);
+            var code = GenerateCode(skeleton, notes, (int)bpm);
 
             var result = fileService.SaveFile(path, code);
             return result;
