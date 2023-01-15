@@ -1,4 +1,5 @@
 ﻿using ArduinoCodeGenerator.Entities;
+using ArduinoCodeGenerator.Entities.Enum;
 using ArduinoCodeGenerator.Properties;
 using System;
 using System.Collections.Generic;
@@ -25,14 +26,24 @@ namespace ArduinoCodeGenerator.Service
             return dialogService.SaveDialog(filter);
         }
 
+        private string GenerateCode(string skeleton, List<NoteInSheetMusicModel> Notes, int bpm)
+        {
+            var result = skeleton
+                .Replace("{Number_BPM}", bpm.ToString())
+                .Replace("{Melody}", "");
+
+            return result;
+        }
+
         public bool GenerateCode(List<NoteInSheetMusicModel> Notes, decimal bpm)
         {
             var path = OpenDialog();
             if (String.IsNullOrEmpty(path)) return false;
 
             var skeleton = Resources.skeleton;
+            var code = GenerateCode(skeleton, Notes, (int)bpm);
 
-            var result = fileService.SaveFile(path, skeleton);
+            var result = fileService.SaveFile(path, code);
             return result;
         }
     }
