@@ -94,15 +94,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Images\Notes\semebreve.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\semibreve.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Images\Notes\1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Assets\Images\Notes\semibreve.png" />
   </ItemGroup>
   <ItemGroup>
@@ -113,12 +104,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Images\Notes\quarterNote.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Images\Notes\fusa.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Images\Notes\semifusa.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Images\Notes\sixteenthNote.png" />
@@ -137,6 +122,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Images\Notes\sixteenthNotePause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Images\Gclef.png" />
+    <Content Include="Assets\Images\Pentagram.png" />
+    <Content Include="Assets\Images\QuarterNote.png" />
+    <Content Include="Assets\Text\skeleton.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -159,5 +159,14 @@ namespace ArduinoCodeGenerator.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        internal static string skeleton {
+            get {
+                return ResourceManager.GetString("skeleton", resourceCulture);
+            }
+        }
     }
 }
