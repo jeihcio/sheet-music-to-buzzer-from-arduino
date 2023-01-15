@@ -62,8 +62,8 @@ namespace ArduinoCodeGenerator.Service
                 108, // Semibreve
                 110, // Minimum
                 94, // Quarter Note
-                106, // Eighth Note
-                106, // Sixteenth Note
+                100, // Eighth Note
+                100, // Sixteenth Note
             };
 
             int top = 0;
