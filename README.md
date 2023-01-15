@@ -14,7 +14,6 @@ Below is a basic example of an Arduino project with a buzzer
 
 ### Online Simulator
 
-If you want to test the project in an online simulator you can use Tinkercad. Here is a link to a base project to test <br/>
-[View project](https://www.tinkercad.com/things/0m69whJNaFS-buzzer-test)
+If you want to test the project in an online simulator you can use Tinkercad. Here is a link to a base project to test [View project](https://www.tinkercad.com/things/0m69whJNaFS-buzzer-test)
 
 
