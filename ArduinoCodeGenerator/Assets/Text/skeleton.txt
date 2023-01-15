@@ -1,5 +1,5 @@
 /* 
-  Connect a piezo buzzer to pin 11 or select a new pin.  
+  Connect a piezo buzzer to pin 10 or select a new pin.  
   Code generator by the following program https://github.com/jeihcio/sheet-music-to-buzzer-from-arduino
 */
 
@@ -22,4 +22,10 @@
 int buzzer = 10;
 
 // BPM
-int time={Number_BPM};
+int time={0};
+
+void setup() {
+
+}
+
+void loop() {}
