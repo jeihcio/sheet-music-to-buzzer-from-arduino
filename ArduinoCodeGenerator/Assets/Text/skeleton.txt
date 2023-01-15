@@ -1,5 +1,5 @@
 /* 
-  Connect a piezo buzzer to pin 10 or select a new pin.  
+  Connect a piezo buzzer to pin 10
   Code generator by the following program https://github.com/jeihcio/sheet-music-to-buzzer-from-arduino
 */
 
@@ -22,7 +22,20 @@
 int buzzer = 10;
 
 // BPM
-int time={0};
+int time={Number_BPM};
+
+// melody notes followed by duration.
+int melody[] = {
+	{Melody}
+}
+
+// notes in vector
+int notes = sizeof(melody) / sizeof(melody[0]) / 2;
+
+// this calculates the duration of a whole note in ms
+int wholenote = (60000 * 4) / time;
+
+int divider = 0, noteDuration = 0;
 
 void setup() {
 
