@@ -26,24 +26,49 @@ namespace ArduinoCodeGenerator.Service
             return dialogService.SaveDialog(filter);
         }
 
+        private int GetDuration(FigureEnum figure)
+        {
+            switch (figure)
+            {
+                case FigureEnum.Semibreve:
+                    return 1;
+                case FigureEnum.Minimum:
+                    return 2;
+                case FigureEnum.QuarterNote:
+                    return 4;
+                case FigureEnum.EighthNote:
+                    return 8;
+                case FigureEnum.SixteenthNote:
+                    return 16;
+                case FigureEnum.Fusa:
+                    return 32;
+                case FigureEnum.Semifusa:
+                    return 64;
+                default:
+                    return 0;
+            }
+        }
+
         private string GenerateCodeMelody(List<NoteInSheetMusicModel> notes)
         {
             var indentation = "\t";
             var result = string.Empty;
             var listNotes = new List<string>();
-            
-            var index = 0;
+
             notes.ForEach((note) =>
             {
-                var codeNote = string.Empty;
+                var codeNote = indentation;
+                var nameNote = string.Empty;
+
                 if (note.Pause)
                 {
+                    nameNote = "REST";
+                    codeNote += nameNote + ", " + GetDuration(note.Duration).ToString();
 
                 }
                 else
                 {
-                    var nameNote = Enum.GetName(typeof(NoteEnum), note.Note);
-
+                    nameNote = Enum.GetName(typeof(NoteEnum), note.Note);
                     nameNote = nameNote
                         .Replace("Note", "NOTE_")
                         .Replace("Do", "C")
@@ -54,13 +79,10 @@ namespace ArduinoCodeGenerator.Service
                         .Replace("La", "A")
                         .Replace("Si", "B");
 
-                    codeNote = indentation + nameNote + note.Scale.ToString();
+                    codeNote += nameNote + note.Scale.ToString() + ", " + GetDuration(note.Duration).ToString();
                 }
 
-                if (!string.IsNullOrEmpty(codeNote))
-                    listNotes.Add(codeNote);
-
-                index++;
+                listNotes.Add(codeNote);
             });
 
             result = String.Join(", \n", listNotes.ToArray());
