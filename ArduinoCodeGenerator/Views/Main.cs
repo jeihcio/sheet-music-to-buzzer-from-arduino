@@ -43,12 +43,12 @@ namespace ArduinoCodeGenerator
 
         private void btnAddNote_Click(object sender, EventArgs e)
         {
-            controller.AddFigure(pnlPentagram, cmbNote, cmbFigure, numberScale, false);
+            controller.AddFigure(pnlPentagram, pnlSheetMusic, cmbNote, cmbFigure, numberScale, false);            
         }
 
         private void btnRemoveLastFigure_Click(object sender, EventArgs e)
         {
-            controller.RemoveLastFigure(pnlPentagram);
+            controller.RemoveLastFigure(pnlPentagram, pnlSheetMusic);
         }
 
         private void saveImageAsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace ArduinoCodeGenerator
 
         private void btnAddPause_Click(object sender, EventArgs e)
         {
-            controller.AddFigure(pnlPentagram, cmbNote, cmbFigurePause, numberScale, true);
+            controller.AddFigure(pnlPentagram, pnlSheetMusic, cmbNote, cmbFigurePause, numberScale, true);
         }
 
         private void exportToolStripMenuItem_Click(object sender, EventArgs e)

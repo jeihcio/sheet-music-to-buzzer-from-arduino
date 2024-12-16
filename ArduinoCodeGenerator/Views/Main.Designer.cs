@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbFigurePause = new System.Windows.Forms.ListBox();
+            this.cmbFigure = new System.Windows.Forms.ListBox();
+            this.cmbNote = new System.Windows.Forms.ListBox();
             this.btnRemoveLastFigure = new System.Windows.Forms.Button();
             this.btnAddPause = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,14 +54,11 @@
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlSheetMusic = new System.Windows.Forms.Panel();
             this.lblBPM = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlPentagram = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cmbNote = new System.Windows.Forms.ListBox();
-            this.cmbFigure = new System.Windows.Forms.ListBox();
-            this.cmbFigurePause = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberScale)).BeginInit();
             this.MenuPentagram.SuspendLayout();
@@ -66,7 +66,7 @@
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.pnlMain.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnlSheetMusic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -92,6 +92,50 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " Write Score ";
+            // 
+            // cmbFigurePause
+            // 
+            this.cmbFigurePause.FormattingEnabled = true;
+            this.cmbFigurePause.Items.AddRange(new object[] {
+            "Semibreve",
+            "Minimum",
+            "Quarter Note",
+            "Eighth Note",
+            "Sixteenth Note"});
+            this.cmbFigurePause.Location = new System.Drawing.Point(325, 42);
+            this.cmbFigurePause.Name = "cmbFigurePause";
+            this.cmbFigurePause.Size = new System.Drawing.Size(160, 95);
+            this.cmbFigurePause.TabIndex = 11;
+            // 
+            // cmbFigure
+            // 
+            this.cmbFigure.FormattingEnabled = true;
+            this.cmbFigure.Items.AddRange(new object[] {
+            "Semibreve",
+            "Minimum",
+            "Quarter Note",
+            "Eighth Note",
+            "Sixteenth Note"});
+            this.cmbFigure.Location = new System.Drawing.Point(78, 42);
+            this.cmbFigure.Name = "cmbFigure";
+            this.cmbFigure.Size = new System.Drawing.Size(160, 95);
+            this.cmbFigure.TabIndex = 10;
+            // 
+            // cmbNote
+            // 
+            this.cmbNote.FormattingEnabled = true;
+            this.cmbNote.Items.AddRange(new object[] {
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "A",
+            "B"});
+            this.cmbNote.Location = new System.Drawing.Point(7, 42);
+            this.cmbNote.Name = "cmbNote";
+            this.cmbNote.Size = new System.Drawing.Size(68, 95);
+            this.cmbNote.TabIndex = 9;
             // 
             // btnRemoveLastFigure
             // 
@@ -286,7 +330,7 @@
             // pnlMain
             // 
             this.pnlMain.BackColor = System.Drawing.Color.White;
-            this.pnlMain.Controls.Add(this.panel3);
+            this.pnlMain.Controls.Add(this.pnlSheetMusic);
             this.pnlMain.Controls.Add(this.pictureBox1);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlMain.Location = new System.Drawing.Point(0, 24);
@@ -294,19 +338,19 @@
             this.pnlMain.Size = new System.Drawing.Size(800, 250);
             this.pnlMain.TabIndex = 6;
             // 
-            // panel3
+            // pnlSheetMusic
             // 
-            this.panel3.AutoScroll = true;
-            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.ContextMenuStrip = this.MenuPentagram;
-            this.panel3.Controls.Add(this.lblBPM);
-            this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Controls.Add(this.pnlPentagram);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(52, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(748, 250);
-            this.panel3.TabIndex = 4;
+            this.pnlSheetMusic.AutoScroll = true;
+            this.pnlSheetMusic.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlSheetMusic.BackgroundImage")));
+            this.pnlSheetMusic.ContextMenuStrip = this.MenuPentagram;
+            this.pnlSheetMusic.Controls.Add(this.lblBPM);
+            this.pnlSheetMusic.Controls.Add(this.pictureBox2);
+            this.pnlSheetMusic.Controls.Add(this.pnlPentagram);
+            this.pnlSheetMusic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlSheetMusic.Location = new System.Drawing.Point(52, 0);
+            this.pnlSheetMusic.Name = "pnlSheetMusic";
+            this.pnlSheetMusic.Size = new System.Drawing.Size(748, 250);
+            this.pnlSheetMusic.TabIndex = 4;
             // 
             // lblBPM
             // 
@@ -352,50 +396,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // cmbNote
-            // 
-            this.cmbNote.FormattingEnabled = true;
-            this.cmbNote.Items.AddRange(new object[] {
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "A",
-            "B"});
-            this.cmbNote.Location = new System.Drawing.Point(7, 42);
-            this.cmbNote.Name = "cmbNote";
-            this.cmbNote.Size = new System.Drawing.Size(68, 95);
-            this.cmbNote.TabIndex = 9;
-            // 
-            // cmbFigure
-            // 
-            this.cmbFigure.FormattingEnabled = true;
-            this.cmbFigure.Items.AddRange(new object[] {
-            "Semibreve",
-            "Minimum",
-            "Quarter Note",
-            "Eighth Note",
-            "Sixteenth Note"});
-            this.cmbFigure.Location = new System.Drawing.Point(78, 42);
-            this.cmbFigure.Name = "cmbFigure";
-            this.cmbFigure.Size = new System.Drawing.Size(160, 95);
-            this.cmbFigure.TabIndex = 10;
-            // 
-            // cmbFigurePause
-            // 
-            this.cmbFigurePause.FormattingEnabled = true;
-            this.cmbFigurePause.Items.AddRange(new object[] {
-            "Semibreve",
-            "Minimum",
-            "Quarter Note",
-            "Eighth Note",
-            "Sixteenth Note"});
-            this.cmbFigurePause.Location = new System.Drawing.Point(325, 42);
-            this.cmbFigurePause.Name = "cmbFigurePause";
-            this.cmbFigurePause.Size = new System.Drawing.Size(160, 95);
-            this.cmbFigurePause.TabIndex = 11;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -423,8 +423,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnlMain.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.pnlSheetMusic.ResumeLayout(false);
+            this.pnlSheetMusic.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -451,7 +451,7 @@
         private System.Windows.Forms.ToolStripMenuItem saveImageAsToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Panel pnlMain;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlSheetMusic;
         private System.Windows.Forms.Label lblBPM;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel pnlPentagram;

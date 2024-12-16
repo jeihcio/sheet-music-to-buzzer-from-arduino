@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace ArduinoCodeGenerator.Controller
 {
@@ -33,13 +34,19 @@ namespace ArduinoCodeGenerator.Controller
             listNoteInSheetMusic.RemoveAll(x => x != null);
         }
 
+        private void MoveScrollForEnd(Panel pnlSheetMusic)
+        {
+            pnlSheetMusic.HorizontalScroll.Value = pnlSheetMusic.HorizontalScroll.Maximum;
+            pnlSheetMusic.PerformLayout(); 
+        }
+
         public void AddFigure(Panel pnlPentagram, Image image, NoteInSheetMusicModel noteScale, FigureEnum figure, bool isPause)
         {
             sheetMusicService.DrawFigure(pnlPentagram, image, noteScale, figure, isPause);
             listNoteInSheetMusic.Add(noteScale);
         }
 
-        public void AddFigure(Panel pnlPentagram, ListControl cmbNote, ListControl cmbFigure, NumericUpDown numberScale, bool isPause)
+        public void AddFigure(Panel pnlPentagram, Panel pnlSheetMusic, ListControl cmbNote, ListControl cmbFigure, NumericUpDown numberScale, bool isPause)
         {
             var figure = (FigureEnum)cmbFigure.SelectedIndex;
             var note = (NoteEnum)cmbNote.SelectedIndex;
@@ -48,14 +55,17 @@ namespace ArduinoCodeGenerator.Controller
             var image = sheetMusicService.GetImage(figure, noteScale, isPause);
 
             AddFigure(pnlPentagram, image, noteScale, figure, isPause);
+            MoveScrollForEnd(pnlSheetMusic);
         }
 
-        public void RemoveLastFigure(Panel pnlPentagram)
+        public void RemoveLastFigure(Panel pnlPentagram, Panel pnlSheetMusic)
         {
             var last = listNoteInSheetMusic.LastOrDefault();
 
             sheetMusicService.RemoveLastFigure(pnlPentagram);
             listNoteInSheetMusic.Remove(last);
+
+            MoveScrollForEnd(pnlSheetMusic);
         }
 
         public void SaveImageAs(Panel pnlPentagram)
